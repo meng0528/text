@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "我的团队",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
+        "u-tag": "/node-modules/uview-ui/components/u-tag/u-tag",
+        "u--image": "/node-modules/uview-ui/components/u--image/u--image",
+        "u-search": "/node-modules/uview-ui/components/u-search/u-search",
+        "u-empty": "/node-modules/uview-ui/components/u-empty/u-empty"
+    }
+}

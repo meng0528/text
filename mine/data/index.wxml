@@ -1,0 +1,35 @@
+<view class="container">
+    <u-toast bind:__l="__l" class="vue-ref" data-ref="uToast" vueId="18682386-1"></u-toast>
+    <view class="data" style="{{'background-color:'+setting.store.sys_theme}}">
+        <view class="number">{{userInfo.balance}}</view>
+        <view class="text">可提现金额（元）</view>
+    </view>
+    <view class="tabs" wx:if="{{setting&&setting.store.is_close==10}}">
+        <u-tabs activeStyle="{{$root.a0}}" bind:__l="__l" bind:click="__e" current="{{active}}" data-event-opts="{{[ [ '^click',[ ['onClickTabs'] ] ] ]}}" lineColor="{{setting.store.sys_theme}}" list="{{tabs}}" scrollable="{{false}}" vueId="18682386-2"></u-tabs>
+    </view>
+    <view class="panel" wx:if="{{setting&&setting.store.is_close==10}}">
+        <view class="title">提现金额</view>
+        <view class="form">
+            <u--input bind:__l="__l" bind:input="__e" border="bottom" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','money','$event',[] ] ] ] ] ]}}" fontSize="22" placeholder="{{'满'+setting.store.withdrawal_min+'元可提现'}}" value="{{money}}" vueId="18682386-3"></u--input>
+        </view>
+    </view>
+    <view class="submit" wx:if="{{setting&&setting.store.is_close==10}}">
+        <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'onSubmit',['$event'] ] ] ] ]}}">
+            <u-button bind:__l="__l" color="{{setting.store.sys_theme}}" text="立即提现" vueId="18682386-4"></u-button>
+        </view>
+        <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'onToCashLog',['$event'] ] ] ] ]}}">
+            <u-button bind:__l="__l" color="{{setting.store.sys_theme}}" plain="{{true}}" text="提现记录" vueId="18682386-5"></u-button>
+        </view>
+    </view>
+    <view class="remarks" wx:if="{{setting&&setting.store.is_close==10}}">
+        <view class="title">
+            <text>提现说明</text>
+            <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'onAccount',['$event'] ] ] ] ]}}">
+                <u--text bind:__l="__l" iconStyle="font-size: 19px" prefixIcon="plus-square-fill" text="收款信息" vueId="18682386-6"></u--text>
+            </view>
+        </view>
+        <view class="text">
+            <rich-text nodes="{{setting.store.withdrawal_desc}}"></rich-text>
+        </view>
+    </view>
+</view>

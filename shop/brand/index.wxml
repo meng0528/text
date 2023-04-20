@@ -1,0 +1,68 @@
+<view class="container">
+    <u-toast bind:__l="__l" class="vue-ref" data-ref="uToast" vueId="2c9ceb9c-1"></u-toast>
+    <u--form bind:__l="__l" labelPosition="left" labelWidth="81" vueId="2c9ceb9c-2" vueSlots="{{['default']}}">
+        <view class="panel">
+            <view class="title">基础</view>
+            <u-form-item bind:__l="__l" borderBottom="{{false}}" label="品牌名称" vueId="{{'2c9ceb9c-3'+','+'2c9ceb9c-2'}}" vueSlots="{{['default']}}">
+                <u--input bind:__l="__l" bind:input="__e" border="none" clearable="{{true}}" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','name','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入品牌名称" value="{{form.name}}" vueId="{{'2c9ceb9c-4'+','+'2c9ceb9c-3'}}"></u--input>
+            </u-form-item>
+            <u-form-item bind:__l="__l" borderBottom="{{false}}" label="品牌分类" vueId="{{'2c9ceb9c-5'+','+'2c9ceb9c-2'}}" vueSlots="{{['default']}}">
+                <picker bindchange="__e" data-event-opts="{{[ [ 'change',[ [ 'onChangeCate',['$event'] ] ] ] ]}}" range="{{cate}}" rangeKey="name">
+                    <view class="placeholder" style="color:#595959;">{{(form.cate_name?form.cate_name:'请选择品牌分类')+''}}</view>
+                </picker>
+            </u-form-item>
+            <u-form-item bind:__l="__l" borderBottom="{{false}}" label="品牌定位" vueId="{{'2c9ceb9c-6'+','+'2c9ceb9c-2'}}" vueSlots="{{['default']}}">
+                <view bindtap="__e" class="placeholder" data-event-opts="{{[ [ 'tap',[ [ 'onToLocation',['$event'] ] ] ] ]}}" style="color:#595959;">{{''+(form.addr?form.addr:'请选择品牌定位')+''}}</view>
+            </u-form-item>
+            <u-form-item bind:__l="__l" borderBottom="{{false}}" label="客服电话" vueId="{{'2c9ceb9c-7'+','+'2c9ceb9c-2'}}" vueSlots="{{['default']}}">
+                <u--input bind:__l="__l" bind:input="__e" border="none" clearable="{{true}}" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','server','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入客服电话" value="{{form.server}}" vueId="{{'2c9ceb9c-8'+','+'2c9ceb9c-7'}}"></u--input>
+            </u-form-item>
+            <u-form-item bind:__l="__l" borderBottom="{{false}}" label="截流口令" vueId="{{'2c9ceb9c-9'+','+'2c9ceb9c-2'}}" vueSlots="{{['default']}}">
+                <u--input bind:__l="__l" bind:input="__e" border="none" clearable="{{true}}" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','command','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入截流口令" value="{{form.command}}" vueId="{{'2c9ceb9c-10'+','+'2c9ceb9c-9'}}"></u--input>
+            </u-form-item>
+            <u-form-item bind:__l="__l" borderBottom="{{false}}" label="个性标语" vueId="{{'2c9ceb9c-11'+','+'2c9ceb9c-2'}}" vueSlots="{{['default']}}">
+                <u--input bind:__l="__l" bind:input="__e" border="none" clearable="{{true}}" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','slogan','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入个性标语" value="{{form.slogan}}" vueId="{{'2c9ceb9c-12'+','+'2c9ceb9c-11'}}"></u--input>
+            </u-form-item>
+            <u-form-item bind:__l="__l" borderBottom="{{false}}" label="详细介绍" vueId="{{'2c9ceb9c-13'+','+'2c9ceb9c-2'}}" vueSlots="{{['default']}}">
+                <u--textarea bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','details','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入详细介绍" value="{{form.details}}" vueId="{{'2c9ceb9c-14'+','+'2c9ceb9c-13'}}"></u--textarea>
+            </u-form-item>
+        </view>
+        <view class="panel payment">
+            <view class="title">扩展</view>
+            <u--form bind:__l="__l" labelPosition="left" labelWidth="81" vueId="{{'2c9ceb9c-15'+','+'2c9ceb9c-2'}}" vueSlots="{{['default']}}">
+                <u-form-item bind:__l="__l" borderBottom="{{false}}" label="LOGO" vueId="{{'2c9ceb9c-16'+','+'2c9ceb9c-15'}}" vueSlots="{{['default']}}">
+                    <view class="upload">
+                        <u-upload bind:__l="__l" bind:afterRead="__e" bind:delete="__e" data-event-opts="{{[ [ '^afterRead',[ ['afterReadImage'] ] ],[ '^delete',[ ['doDeletePic'] ] ] ]}}" deletable="{{true}}" fileList="{{logo}}" maxCount="1" name="logo" vueId="{{'2c9ceb9c-17'+','+'2c9ceb9c-16'}}"></u-upload>
+                    </view>
+                </u-form-item>
+            </u--form>
+        </view>
+        <view class="panel payment">
+            <view class="title">封面</view>
+            <u--form bind:__l="__l" labelPosition="left" labelWidth="81" vueId="{{'2c9ceb9c-18'+','+'2c9ceb9c-2'}}" vueSlots="{{['default']}}">
+                <u-form-item bind:__l="__l" borderBottom="{{false}}" label="封面图片" vueId="{{'2c9ceb9c-19'+','+'2c9ceb9c-18'}}" vueSlots="{{['default']}}">
+                    <view class="upload">
+                        <u-upload bind:__l="__l" bind:afterRead="__e" bind:delete="__e" data-event-opts="{{[ [ '^afterRead',[ ['afterReadImage'] ] ],[ '^delete',[ ['doDeletePic'] ] ] ]}}" deletable="{{true}}" fileList="{{back_images}}" maxCount="3" multiple="{{true}}" name="back_images" vueId="{{'2c9ceb9c-20'+','+'2c9ceb9c-19'}}"></u-upload>
+                    </view>
+                </u-form-item>
+                <u-form-item bind:__l="__l" borderBottom="{{false}}" label="封面视频" vueId="{{'2c9ceb9c-21'+','+'2c9ceb9c-18'}}" vueSlots="{{['default']}}">
+                    <view class="upload">
+                        <u-upload accept="video" bind:__l="__l" bind:afterRead="__e" bind:delete="__e" data-event-opts="{{[ [ '^afterRead',[ ['afterReadImage'] ] ],[ '^delete',[ ['doDeletePic'] ] ] ]}}" deletable="{{true}}" fileList="{{back_video}}" maxCount="1" multiple="{{true}}" name="back_video" previewFullImage="{{true}}" uploadIcon="play-right-fill" vueId="{{'2c9ceb9c-22'+','+'2c9ceb9c-21'}}"></u-upload>
+                    </view>
+                </u-form-item>
+                <u-form-item bind:__l="__l" borderBottom="{{false}}" label="正在使用" vueId="{{'2c9ceb9c-23'+','+'2c9ceb9c-18'}}" vueSlots="{{['default']}}">
+                    <u-radio-group bind:__l="__l" bind:change="__e" bind:input="__e" data-event-opts="{{[ [ '^change',[ ['groupChange'] ] ],[ '^input',[ [ '__set_model',[ '','radiovalue','$event',[] ] ] ] ] ]}}" placement="row" value="{{radiovalue}}" vueId="{{'2c9ceb9c-24'+','+'2c9ceb9c-23'}}" vueSlots="{{['default']}}">
+                        <view class="radio-style" wx:for="{{radiolist}}" wx:key="index">
+                            <u-radio activeColor="{{setting.store.sys_theme}}" bind:__l="__l" label="{{item.name}}" name="{{item.use_cover}}" vueId="{{'2c9ceb9c-25-'+index+','+'2c9ceb9c-24'}}"></u-radio>
+                        </view>
+                    </u-radio-group>
+                </u-form-item>
+            </u--form>
+        </view>
+        <view class="submit" wx:if="{{userInfo.level}}">
+            <view class="btn">
+                <u-button bind:__l="__l" bind:click="__e" color="{{setting.store.sys_theme}}" data-event-opts="{{[ [ '^click',[ ['onSubmit'] ] ] ]}}" text="保存设置" vueId="{{'2c9ceb9c-26'+','+'2c9ceb9c-2'}}"></u-button>
+            </view>
+        </view>
+    </u--form>
+</view>

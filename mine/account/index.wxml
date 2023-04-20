@@ -1,0 +1,49 @@
+<view class="container">
+    <u-toast bind:__l="__l" class="vue-ref" data-ref="uToast" vueId="7c08f2b9-1"></u-toast>
+    <u--form bind:__l="__l" labelPosition="left" labelWidth="81" vueId="7c08f2b9-2" vueSlots="{{['default']}}">
+        <view class="panel" wx:if="{{!userInfo.level}}">
+            <view class="title">我的信息</view>
+            <u-form-item bind:__l="__l" borderBottom="{{false}}" label="微信昵称" vueId="{{'7c08f2b9-3'+','+'7c08f2b9-2'}}" vueSlots="{{['default']}}">
+                <view>{{userInfo.nickName}}</view>
+            </u-form-item>
+            <u-form-item bind:__l="__l" borderBottom="{{false}}" label="账户余额" vueId="{{'7c08f2b9-4'+','+'7c08f2b9-2'}}" vueSlots="{{['default']}}">
+                <view>{{userInfo.balance}}</view>
+            </u-form-item>
+            <u-form-item bind:__l="__l" borderBottom="{{false}}" label="账号等级" vueId="{{'7c08f2b9-5'+','+'7c08f2b9-2'}}" vueSlots="{{['default']}}">
+                <view>{{userInfo.level}}</view>
+            </u-form-item>
+        </view>
+        <view class="panel" wx:if="{{userInfo.level}}">
+            <view class="title">个人信息</view>
+            <u-form-item bind:__l="__l" borderBottom="{{false}}" label="真实姓名" vueId="{{'7c08f2b9-6'+','+'7c08f2b9-2'}}" vueSlots="{{['default']}}">
+                <u--input bind:__l="__l" bind:input="__e" border="none" clearable="{{true}}" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','real_name','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入真实姓名" value="{{form.real_name}}" vueId="{{'7c08f2b9-7'+','+'7c08f2b9-6'}}"></u--input>
+            </u-form-item>
+            <u-form-item bind:__l="__l" borderBottom="{{false}}" label="微信号" vueId="{{'7c08f2b9-8'+','+'7c08f2b9-2'}}" vueSlots="{{['default']}}">
+                <u--input bind:__l="__l" bind:input="__e" border="none" clearable="{{true}}" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','wx_number','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入微信号" value="{{form.wx_number}}" vueId="{{'7c08f2b9-9'+','+'7c08f2b9-8'}}"></u--input>
+            </u-form-item>
+            <u-form-item bind:__l="__l" borderBottom="{{false}}" label="手机号" vueId="{{'7c08f2b9-10'+','+'7c08f2b9-2'}}" vueSlots="{{['default']}}">
+                <u--input bind:__l="__l" bind:input="__e" border="none" clearable="{{true}}" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','mobile','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入手机号" value="{{form.mobile}}" vueId="{{'7c08f2b9-11'+','+'7c08f2b9-10'}}"></u--input>
+            </u-form-item>
+        </view>
+        <view class="panel payment" wx:if="{{userInfo.level}}">
+            <view class="title">收款信息</view>
+            <u--form bind:__l="__l" labelPosition="left" labelWidth="81" vueId="{{'7c08f2b9-12'+','+'7c08f2b9-2'}}" vueSlots="{{['default']}}">
+                <u-form-item bind:__l="__l" borderBottom="{{false}}" label="微信收款" vueId="{{'7c08f2b9-13'+','+'7c08f2b9-12'}}" vueSlots="{{['default']}}">
+                    <view class="upload">
+                        <u-upload bind:__l="__l" bind:afterRead="__e" bind:delete="__e" data-event-opts="{{[ [ '^afterRead',[ ['afterReadImage'] ] ],[ '^delete',[ ['deletePic'] ] ] ]}}" fileList="{{wx_image}}" name="wx" vueId="{{'7c08f2b9-14'+','+'7c08f2b9-13'}}"></u-upload>
+                    </view>
+                </u-form-item>
+                <u-form-item bind:__l="__l" borderBottom="{{false}}" label="支付宝收款" vueId="{{'7c08f2b9-15'+','+'7c08f2b9-12'}}" vueSlots="{{['default']}}">
+                    <view class="upload">
+                        <u-upload bind:__l="__l" bind:afterRead="__e" bind:delete="__e" data-event-opts="{{[ [ '^afterRead',[ ['afterReadImage'] ] ],[ '^delete',[ ['deletePic'] ] ] ]}}" fileList="{{ali_image}}" name="ali" vueId="{{'7c08f2b9-16'+','+'7c08f2b9-15'}}"></u-upload>
+                    </view>
+                </u-form-item>
+            </u--form>
+        </view>
+        <view class="submit" wx:if="{{userInfo.level}}">
+            <view class="btn">
+                <u-button bind:__l="__l" bind:click="__e" color="{{setting.store.sys_theme}}" data-event-opts="{{[ [ '^click',[ ['onSubmit'] ] ] ]}}" text="保存设置" vueId="{{'7c08f2b9-17'+','+'7c08f2b9-2'}}"></u-button>
+            </view>
+        </view>
+    </u--form>
+</view>

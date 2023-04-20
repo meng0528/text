@@ -1,0 +1,177 @@
+<view class="container">
+    <u-navbar autoBack="{{false}}" bgColor="rgba(255,255,255,0)" bind:__l="__l" title="个人中心" titleStyle="{{titleStyle}}" vueId="29285db4-1" vueSlots="{{['left']}}">
+        <view slot="left"></view>
+    </u-navbar>
+    <view class="bg" style="{{'height: '+statusBarHeight+'px;'}}">
+        <view class="image">
+            <view class="back-top" style="{{'background: linear-gradient('+setting.store.sys_theme+',#f4f4f4);'}}"></view>
+        </view>
+        <view class="user">
+            <view bindtap="__e" class="info" data-event-opts="{{[ [ 'tap',[ [ 'ondoLogin',['$event'] ] ] ] ]}}">
+                <view class="content">
+                    <view class="headimg">
+                        <u-icon bind:__l="__l" name="/static/touxiang.png" size="61" vueId="29285db4-2" wx:if="{{!userInfo}}"></u-icon>
+                        <u--image bind:__l="__l" height="61" shape="circle" src="{{userInfo.avatarUrl}}" vueId="29285db4-3" width="61" wx:if="{{userInfo}}"></u--image>
+                    </view>
+                    <view class="nickname">
+                        <view class="name" wx:if="{{!userInfo}}">未登录</view>
+                        <view class="name" wx:if="{{userInfo}}">
+                            <text class="u-line-1">{{userInfo.nickName}}</text>
+                        </view>
+                        <view class="grade">
+                            <u-tag bind:__l="__l" plain="{{true}}" size="mini" text="普通用户" type="warning" vueId="29285db4-4" wx:if="{{!userInfo||!userInfo.level}}"></u-tag>
+                            <u-tag bind:__l="__l" plain="{{true}}" size="mini" text="团长" type="warning" vueId="29285db4-5" wx:if="{{userInfo&&userInfo.level==1}}"></u-tag>
+                            <u-tag bind:__l="__l" plain="{{true}}" size="mini" text="拓展员" type="warning" vueId="29285db4-6" wx:if="{{userInfo&&userInfo.level==2}}"></u-tag>
+                            <u-tag bind:__l="__l" plain="{{true}}" size="mini" text="商家" type="warning" vueId="29285db4-7" wx:if="{{userInfo&&userInfo.level==3}}"></u-tag>
+                            <view class="uid" wx:if="{{userInfo}}">{{'ID：'+userInfo.user_id}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="data" wx:if="{{userInfo&&userInfo.level}}">
+                <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'onTool',[50] ] ] ] ]}}">
+                    <view class="number" wx:if="{{userInfo}}">{{userInfo.z_day_balance}}</view>
+                    <view class="number" wx:else>0.00</view>
+                    <view class="text">昨日收益（元）</view>
+                </view>
+                <view class="line"></view>
+                <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'onTool',[30] ] ] ] ]}}">
+                    <view class="number" wx:if="{{userInfo}}">{{userInfo.balance}}</view>
+                    <view class="number" wx:else>0.00</view>
+                    <view class="text">可提现（元）</view>
+                </view>
+                <view class="line"></view>
+                <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'onTool',[60] ] ] ] ]}}">
+                    <view class="number" wx:if="{{userInfo}}">{{userInfo.sum_balance}}</view>
+                    <view class="number" wx:else>0.00</view>
+                    <view class="text">累计提现（元）</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="my-order" wx:if="{{userInfo&&is_check_store}}">
+        <u-cell-group bind:__l="__l" vueId="29285db4-8" vueSlots="{{['default']}}">
+            <u-cell arrowDirection="right" bind:__l="__l" border="{{false}}" clickable="{{true}}" iconStyle="{{cellIconStyle}}" isLink="{{true}}" rightIconStyle="{{cellStyle}}" size="large" title="我的订单" titleStyle="{{cellStyle}}" url="{{orderUrl}}" value="全部订单" vueId="{{'29285db4-9'+','+'29285db4-8'}}"></u-cell>
+        </u-cell-group>
+        <view class="order-icon">
+            <view bindtap="__e" class="icon-style" data-event-opts="{{[ [ 'tap',[ [ 'oNorderList',['payment'] ] ] ] ]}}">
+                <image src="../../../static/order/to_be_paid.png"></image>
+                <text>待付款</text>
+            </view>
+            <view bindtap="__e" class="icon-style" data-event-opts="{{[ [ 'tap',[ [ 'oNorderList',['delivery'] ] ] ] ]}}">
+                <image src="../../../static/order/to_be_shipped.png"></image>
+                <text>待发货</text>
+            </view>
+            <view bindtap="__e" class="icon-style" data-event-opts="{{[ [ 'tap',[ [ 'oNorderList',['received'] ] ] ] ]}}">
+                <image src="../../../static/order/to_be_received.png"></image>
+                <text>待收货</text>
+            </view>
+            <view bindtap="__e" class="icon-style" data-event-opts="{{[ [ 'tap',[ [ 'oNorderList',['complete'] ] ] ] ]}}">
+                <image src="../../../static/order/completed.png"></image>
+                <text>已完成</text>
+            </view>
+        </view>
+    </view>
+    <view class="tool">
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'onTool',[10] ] ] ] ]}}">
+            <view class="left">
+                <view class="icon">
+                    <u-icon bind:__l="__l" color="{{setting.store.sys_theme}}" name="plus-people-fill" size="28" vueId="29285db4-10"></u-icon>
+                </view>
+                <view class="title">我的团队</view>
+            </view>
+            <view class="icon">
+                <u-icon bind:__l="__l" name="arrow-right" vueId="29285db4-11"></u-icon>
+            </view>
+        </view>
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'onTool',[80] ] ] ] ]}}" wx:if="{{userInfo&&userInfo.level==3&&is_check_nearby}}">
+            <view class="left">
+                <view class="icon">
+                    <u-icon bind:__l="__l" color="{{setting.store.sys_theme}}" name="home-fill" size="28" vueId="29285db4-12"></u-icon>
+                </view>
+                <view class="title">商户后台</view>
+            </view>
+            <view class="icon">
+                <u-icon bind:__l="__l" name="arrow-right" vueId="29285db4-13"></u-icon>
+            </view>
+        </view>
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'onTool',[100] ] ] ] ]}}">
+            <view class="left">
+                <view class="icon">
+                    <u-icon bind:__l="__l" color="{{setting.store.sys_theme}}" name="coupon-fill" size="28" vueId="29285db4-14"></u-icon>
+                </view>
+                <view class="title">我的卡包</view>
+            </view>
+            <view class="icon">
+                <u-icon bind:__l="__l" name="arrow-right" vueId="29285db4-15"></u-icon>
+            </view>
+        </view>
+        <view class="item">
+            <button class="contact-btn" openType="contact" wx:if="{{setting.store.service.use_ing==10}}">
+                <view class="left">
+                    <view class="icon">
+                        <u-icon bind:__l="__l" color="{{setting.store.sys_theme}}" name="server-man" size="28" vueId="29285db4-16"></u-icon>
+                    </view>
+                    <text class="title">在线客服</text>
+                </view>
+            </button>
+            <view bindtap="__e" class="left" data-event-opts="{{[ [ 'tap',[ [ 'onService',['$event'] ] ] ] ]}}" wx:if="{{setting.store.service.use_ing==20}}">
+                <view class="icon">
+                    <u-icon bind:__l="__l" color="{{setting.store.sys_theme}}" name="server-man" size="28" vueId="29285db4-17"></u-icon>
+                </view>
+                <view class="title">
+                    <text class="title">在线客服</text>
+                </view>
+            </view>
+            <view class="icon">
+                <u-icon bind:__l="__l" name="arrow-right" vueId="29285db4-18"></u-icon>
+            </view>
+        </view>
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'onTool',[30] ] ] ] ]}}" wx:if="{{userInfo&&userInfo.level}}">
+            <view class="left">
+                <view class="icon">
+                    <u-icon bind:__l="__l" color="{{setting.store.sys_theme}}" name="red-packet-fill" size="28" vueId="29285db4-19"></u-icon>
+                </view>
+                <view class="title">收益数据</view>
+            </view>
+            <view class="icon">
+                <u-icon bind:__l="__l" name="arrow-right" vueId="29285db4-20"></u-icon>
+            </view>
+        </view>
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'onTool',[40] ] ] ] ]}}">
+            <view class="left">
+                <view class="icon">
+                    <u-icon bind:__l="__l" color="{{setting.store.sys_theme}}" name="warning-fill" size="28" vueId="29285db4-21"></u-icon>
+                </view>
+                <view class="title">帮助中心</view>
+            </view>
+            <view class="icon">
+                <u-icon bind:__l="__l" name="arrow-right" vueId="29285db4-22"></u-icon>
+            </view>
+        </view>
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'onTool',[110] ] ] ] ]}}" wx:if="{{userInfo&&!userInfo.level&&is_check_store&&setting.store.is_close==10}}">
+            <view class="left">
+                <view class="icon">
+                    <u-icon bind:__l="__l" color="{{setting.store.sys_theme}}" name="plus-circle-fill" size="28" vueId="29285db4-23"></u-icon>
+                </view>
+                <view class="title">申请团长</view>
+            </view>
+            <view class="icon">
+                <u-icon bind:__l="__l" name="arrow-right" vueId="29285db4-24"></u-icon>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="on-login" data-event-opts="{{[ [ 'tap',[ [ 'ondoLogin',['$event'] ] ] ] ]}}">
+        <u-button bind:__l="__l" color="{{setting.store.sys_theme}}" text="{{userInfo?'退出登录':'立即登录'}}" vueId="29285db4-25"></u-button>
+    </view>
+    <view bindtap="__e" class="invitation" data-event-opts="{{[ [ 'tap',[ [ 'onPoster',['$event'] ] ] ] ]}}" wx:if="{{userInfo.level>=1&&userInfo.level!=3}}">
+        <u--image bind:__l="__l" height="80px" mode="scaleToFill" showLoading="{{true}}" src="/static/team_poster_i.png" vueId="29285db4-26" width="100%"></u--image>
+    </view>
+    <view class="ad" wx:if="{{setting.store.flow.video.status==1}}">
+        <ad adTheme="white" adType="video" unitId="{{setting.store.flow.video.video_ad}}"></ad>
+    </view>
+    <view class="copyright">
+        <view class="text">{{setting.store.version}}</view>
+    </view>
+    <tabbar active="30" bind:__l="__l" bind:onGetPlugs="__e" data-event-opts="{{[ [ '^onGetPlugs',[ ['getPlugs'] ] ] ]}}" vueId="29285db4-27"></tabbar>
+</view>

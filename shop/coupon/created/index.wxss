@@ -1,0 +1,25 @@
+.security {
+    align-items: center;
+    display: flex;
+    margin-top: 30rpx;
+}
+
+.form {
+    background-color: #fff;
+    padding: 20rpx 50rpx;
+}
+
+.form .item {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.form .item .text {
+    font-size: 24rpx;
+    margin-left: 15rpx;
+}
+
+.submit {
+    margin: 50rpx 0rpx;
+}

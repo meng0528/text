@@ -1,0 +1,36 @@
+<view class="container">
+    <u-toast bind:__l="__l" class="vue-ref" data-ref="uToast" vueId="9f5d366c-1"></u-toast>
+    <view class="coupon" wx:if="{{coupon.length>0}}">
+        <u-swipe-action bind:__l="__l" vueId="9f5d366c-2" vueSlots="{{['default']}}">
+            <view class="item" wx:for="{{coupon}}" wx:key="index">
+                <u-swipe-action-item bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['onToAction'] ] ] ]}}" name="{{item.id}}" options="{{action}}" vueId="{{'9f5d366c-3-'+index+','+'9f5d366c-2'}}" vueSlots="{{['default']}}">
+                    <view class="top">
+                        <view class="head" style="{{'background-color:'+setting.store.sys_theme+';'}}">
+                            <view class="number">
+                                <text>￥</text>{{item.price}}</view>
+                            <view class="text">优惠券</view>
+                        </view>
+                        <view class="content">
+                            <view class="title">{{item.name}}</view>
+                            <view class="tips">{{item.remarks}}</view>
+                            <view class="line">
+                                <view class="date">
+                                    <view>{{item.create_time}}</view>
+                                </view>
+                                <view class="number">{{'剩余'+item.num+'/'+item.sum_num+'张'}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </u-swipe-action-item>
+            </view>
+        </u-swipe-action>
+    </view>
+    <view wx:if="{{coupon.length<=0}}">
+        <view class="empty">
+            <u-empty bind:__l="__l" icon="http://cdn.uviewui.com/uview/empty/data.png" mode="data" text="店铺暂无活动..." vueId="9f5d366c-4"></u-empty>
+        </view>
+    </view>
+    <view bindtap="__e" class="action" data-event-opts="{{[ [ 'tap',[ [ 'onToCoupon',[0] ] ] ] ]}}">
+        <u-button bind:__l="__l" color="{{setting.store.sys_theme}}" icon="plus-circle" iconColor="#fff" shape="circle" size="large" text="添加优惠券" vueId="9f5d366c-5"></u-button>
+    </view>
+</view>

@@ -1,0 +1,79 @@
+page {
+    background-color: #f4f4f4;
+}
+
+.tabs {
+    background-color: #fff;
+}
+
+.order {
+    margin: 0 auto;
+    width: 94%;
+}
+
+.order .item {
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1rpx solid #f4f4f4;
+    border-radius: 10rpx;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15rpx;
+    padding: 30rpx;
+}
+
+.order .item .image {
+    width: 80px;
+}
+
+.order .item .content {
+    width: 40%;
+}
+
+.order .item .right {
+    text-align: right;
+    width: 60%;
+}
+
+.order .item .right .red {
+    color: red;
+}
+
+.order .item .right .d-date {
+    font-size: 24rpx;
+    margin-top: 15rpx;
+}
+
+.order .item .title {
+    font-size: 28rpx;
+    font-weight: bolder;
+    margin-bottom: 15rpx;
+}
+
+.order .item .date {
+    color: #595959;
+    font-size: 24rpx;
+}
+
+.order .item .state {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.order .item .state .text {
+    font-size: 28rpx;
+}
+
+.order .item .state .text.no {
+    color: #6495ed;
+    margin-top: 15rpx;
+}
+
+.order .item .state.red {
+    color: red;
+}
+
+.order .item .state.green {
+    color: green;
+}

@@ -1,0 +1,9 @@
+page {
+    background-color: #fff;
+}
+
+.loading {
+    margin: 0 auto;
+    padding-top: calc(50% - 180rpx);
+    width: 360rpx;
+}

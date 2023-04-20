@@ -1,0 +1,54 @@
+.ad {
+    margin-top: 30rpx;
+}
+
+.submit {
+    margin: 0 auto;
+    width: 92%;
+}
+
+.submit .btn {
+    margin: 30rpx 0rpx;
+}
+
+.tips {
+    justify-content: space-around;
+    margin: 30rpx 0rpx;
+}
+
+.tips,.tips .item {
+    display: flex;
+    flex-direction: row;
+}
+
+.tips .item {
+    align-items: center;
+}
+
+.tips .item .text {
+    font-size: 24rpx;
+    margin-left: 15rpx;
+}
+
+.form {
+    background-color: #fff;
+    border-radius: 15rpx;
+    margin: 30rpx auto;
+    padding: 15rpx 15rpx 50rpx 30rpx;
+    width: 86%;
+}
+
+.form .type {
+    color: red;
+    font-weight: bolder;
+}
+
+.form .item .security {
+    display: flex;
+    margin: 15rpx 0rpx;
+}
+
+.form .item .security .text {
+    font-size: 24rpx;
+    margin-left: 10rpx;
+}

@@ -1,0 +1,75 @@
+<view class="container">
+    <view class="nearby">
+        <view class="head">
+            <view class="line"></view>
+            <view class="title">附近<text>{{title}}</text>品牌</view>
+            <view class="line"></view>
+        </view>
+        <view class="tabs">
+            <u-tabs activeStyle="{{$root.a0}}" bind:__l="__l" lineColor="{{setting.store.sys_theme}}" list="{{tabs}}" scrollable="{{false}}" vueId="249179c4-1"></u-tabs>
+        </view>
+    </view>
+    <view class="shop" wx:if="{{shop.length>0}}">
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'onToShop',['$0'],[ [ ['shop','',index] ] ] ] ] ] ]}}" wx:for="{{$root.l0}}" wx:key="index">
+            <view class="top">
+                <view class="logo">
+                    <u--image bind:__l="__l" height="60px" showLoading="{{true}}" src="{{item.$orig.logo.file_path}}" vueId="{{'249179c4-2-'+index}}" width="60px"></u--image>
+                </view>
+                <view class="content">
+                    <view class="name">{{item.$orig.name}}</view>
+                    <view class="score">
+                        <view class="rate">
+                            <u-rate activeColor="orange" bind:__l="__l" bind:input="__e" count="{{score}}" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','score','$event',[] ] ] ] ] ]}}" gutter="2" readonly="{{true}}" size="16" value="{{score}}" vueId="{{'249179c4-3-'+index}}"></u-rate>
+                        </view>
+                        <view class="text">5.0分</view>
+                    </view>
+                    <view class="address">
+                        <u--text bind:__l="__l" color="#595959" lines="{{1}}" size="12" text="{{'地址：'+item.$orig.addr}}" vueId="{{'249179c4-4-'+index}}"></u--text>
+                    </view>
+                </view>
+                <view class="location">
+                    <view class="hot"></view>
+                    <view class="number">
+                        <view class="icon"></view>
+                        <view class="text">{{item.g0+'km'}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="bottom">
+                <view class="tips">
+                    <view class="icon">
+                        <u-icon bind:__l="__l" name="https://img.alicdn.com/imgextra/i3/2064565174/O1CN01RImGn31o5jztye0Ox_!!2064565174.png" size="14" vueId="{{'249179c4-5-'+index}}"></u-icon>
+                    </view>
+                    <view class="text">免费券</view>
+                </view>
+                <view class="tips">
+                    <view class="icon">
+                        <u-icon bind:__l="__l" name="https://img.alicdn.com/imgextra/i2/2064565174/O1CN013XXrWn1o5k0ApXzJV_!!2064565174.png" size="14" vueId="{{'249179c4-6-'+index}}"></u-icon>
+                    </view>
+                    <view class="text">停车位</view>
+                </view>
+                <view class="tips">
+                    <view class="icon">
+                        <u-icon bind:__l="__l" name="https://img.alicdn.com/imgextra/i2/2064565174/O1CN01pIRqPs1o5k0A4ELS0_!!2064565174.png" size="14" vueId="{{'249179c4-7-'+index}}"></u-icon>
+                    </view>
+                    <view class="text">WiFi</view>
+                </view>
+                <view class="tips">
+                    <view class="icon">
+                        <u-icon bind:__l="__l" name="https://img.alicdn.com/imgextra/i1/2064565174/O1CN01KHll6C1o5k05KYL8C_!!2064565174.png" size="14" vueId="{{'249179c4-8-'+index}}"></u-icon>
+                    </view>
+                    <view class="text">支付宝</view>
+                </view>
+                <view class="tips">
+                    <view class="icon">
+                        <u-icon bind:__l="__l" name="https://img.alicdn.com/imgextra/i4/2064565174/O1CN01qOgXwT1o5k01813cZ_!!2064565174.png" size="14" vueId="{{'249179c4-9-'+index}}"></u-icon>
+                    </view>
+                    <view class="text">微信</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <u-empty bind:__l="__l" icon="http://cdn.uviewui.com/uview/empty/data.png" mode="data" text="附近暂无商户" vueId="249179c4-10"></u-empty>
+    </view>
+</view>

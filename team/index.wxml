@@ -1,0 +1,61 @@
+<view class="container">
+    <view class="user">
+        <view class="info">
+            <view bindtap="__e" class="content" data-event-opts="{{[ [ 'tap',[ [ 'ondoLogin',['$event'] ] ] ] ]}}">
+                <view class="headimg">
+                    <u-icon bind:__l="__l" name="/static/touxiang.png" size="61" vueId="3d695c4d-1" wx:if="{{!userInfo}}"></u-icon>
+                    <u-icon bind:__l="__l" name="{{userInfo.avatarUrl}}" size="61" vueId="3d695c4d-2" wx:if="{{userInfo}}"></u-icon>
+                </view>
+                <view class="nickname">
+                    <view class="name" wx:if="{{!userInfo}}">未登录</view>
+                    <view class="name" wx:if="{{userInfo}}">{{userInfo.nickName}}</view>
+                    <view class="grade">
+                        <u-tag bind:__l="__l" plain="{{true}}" size="mini" text="普通用户" type="warning" vueId="3d695c4d-3" wx:if="{{!userInfo||!userInfo.level}}"></u-tag>
+                        <u-tag bind:__l="__l" plain="{{true}}" size="mini" text="团长" type="warning" vueId="3d695c4d-4" wx:if="{{userInfo&&userInfo.level==1}}"></u-tag>
+                        <u-tag bind:__l="__l" plain="{{true}}" size="mini" text="拓展员" type="warning" vueId="3d695c4d-5" wx:if="{{userInfo&&userInfo.level==2}}"></u-tag>
+                        <u-tag bind:__l="__l" plain="{{true}}" size="mini" text="商家" type="warning" vueId="3d695c4d-6" wx:if="{{userInfo&&userInfo.level==3}}"></u-tag>
+                        <view class="uid" wx:if="{{userInfo}}">{{'ID：'+userInfo.user_id}}</view>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="__e" class="image" data-event-opts="{{[ [ 'tap',[ [ 'onModify',['$event'] ] ] ] ]}}">
+                <u--image bind:__l="__l" height="32px" showLoading="{{true}}" src="/static/setting_i.png" vueId="3d695c4d-7" width="32px"></u--image>
+            </view>
+        </view>
+    </view>
+    <view class="data">
+        <view class="item">
+            <view class="number">{{data.z_day}}</view>
+            <view class="text">昨日累计连接</view>
+        </view>
+        <view class="line"></view>
+        <view class="item">
+            <view class="number">{{data.day}}</view>
+            <view class="text">今日实时连接</view>
+        </view>
+    </view>
+    <view class="search">
+        <u-search bind:__l="__l" bind:custom="__e" bind:input="__e" bind:search="__e" data-event-opts="{{[ [ '^search',[ ['onSearch'] ] ],[ '^custom',[ ['onSearch'] ] ],[ '^input',[ [ '__set_model',[ '','keywords','$event',[] ] ] ] ] ]}}" placeholder="请输入名字或手机号搜索" value="{{keywords}}" vueId="3d695c4d-8"></u-search>
+    </view>
+    <view class="team" wx:if="{{team.length>0}}">
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'onUserWiFi',['$0'],[ [ ['team','',index,'user_id'] ] ] ] ] ] ]}}" wx:for="{{team}}" wx:key="index">
+            <view class="icon">
+                <u--image bind:__l="__l" height="72" shape="circle" showLoading="{{true}}" src="{{item.avatarUrl}}" vueId="{{'3d695c4d-9-'+index}}" width="72"></u--image>
+            </view>
+            <view class="content">
+                <view class="nickname">{{''+item.nickName}}<text class="name">{{item.real_name}}</text>
+                </view>
+                <view class="phone">
+                    <text class="h">手机号码：</text>{{item.mobile}}</view>
+                <view class="type">
+                    <text class="h">用户类型：</text>{{(item.level==1?'团长':item.level==2?'拓展员':item.level==3?'商家':'普通用户')+'【'+100-item.commission+'%】'}}</view>
+            </view>
+            <view class="arrow">
+                <u-icon bind:__l="__l" name="arrow-right-double" size="24" vueId="{{'3d695c4d-10-'+index}}"></u-icon>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <u-empty bind:__l="__l" icon="http://cdn.uviewui.com/uview/empty/data.png" mode="car" text="未找到团队成员,请换个词搜索试试" vueId="3d695c4d-11"></u-empty>
+    </view>
+</view>

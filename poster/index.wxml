@@ -1,0 +1,69 @@
+<view class="container">
+    <u-toast bind:__l="__l" class="vue-ref" data-ref="uToast" vueId="83f7f0c6-1"></u-toast>
+    <view class="poster" wx:if="{{!is_modify}}">
+        <l-painter bind:__l="__l" bind:success="__e" css="width: 540rpx;background: #ffffff" data-event-opts="{{[ [ '^success',[ ['e0'] ] ] ]}}" isCanvasToTempFilePath="{{true}}" vueId="83f7f0c6-2" vueSlots="{{['default']}}">
+            <l-painter-view bind:__l="__l" css="margin-top: 30rpx;text-align: center;width: 100%;" vueId="{{'83f7f0c6-3'+','+'83f7f0c6-2'}}" vueSlots="{{['default']}}">
+                <l-painter-text bind:__l="__l" css="display: block; padding-bottom: 10rpx; color: #000; font-size: 38rpx;" text="{{form.custom_text_1}}" vueId="{{'83f7f0c6-4'+','+'83f7f0c6-3'}}"></l-painter-text>
+                <l-painter-text bind:__l="__l" css="color: #595959; font-size: 32rpx" text="{{form.custom_text_2}}" vueId="{{'83f7f0c6-5'+','+'83f7f0c6-3'}}"></l-painter-text>
+            </l-painter-view>
+            <l-painter-view bind:__l="__l" css="margin-top: 40rpx;text-align: center;width: 100%;" vueId="{{'83f7f0c6-6'+','+'83f7f0c6-2'}}" vueSlots="{{['default']}}">
+                <l-painter-image bind:__l="__l" css="object-fit: cover; object-position: 50% 50%; width: 380rpx; height: 380rpx; border-radius: 12rpx;" src="{{qrcode}}" vueId="{{'83f7f0c6-7'+','+'83f7f0c6-6'}}"></l-painter-image>
+            </l-painter-view>
+            <l-painter-view bind:__l="__l" css="{backgroundColor:sys_theme,marginTop:'30rpx',width:'100%',textAlign:'center',paddingTop:'30rpx',paddingBottom:'30rpx'}" vueId="{{'83f7f0c6-8'+','+'83f7f0c6-2'}}" vueSlots="{{['default']}}">
+                <l-painter-text bind:__l="__l" css="font-weight: bolder;display: block; padding-bottom: 10rpx; color: #fff; font-size: 32rpx;" text="{{form.custom_text_3}}" vueId="{{'83f7f0c6-9'+','+'83f7f0c6-8'}}"></l-painter-text>
+                <l-painter-text bind:__l="__l" css="color: #fff; font-size: 28rpx" text="{{form.custom_text_4}}" vueId="{{'83f7f0c6-10'+','+'83f7f0c6-8'}}"></l-painter-text>
+            </l-painter-view>
+        </l-painter>
+    </view>
+    <view class="tips" wx:if="{{!is_modify}}">
+        <view class="text">{{tips}}</view>
+    </view>
+    <view class="action">
+        <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'onDownPoster',['$0'],['image'] ] ] ] ]}}">
+            <view class="icon">
+                <u-icon bind:__l="__l" name="/static/poster/i_poster.png" size="48" vueId="83f7f0c6-11"></u-icon>
+            </view>
+            <view class="text">海报下载</view>
+        </view>
+        <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'onDownPoster',['$0',true],['qrcode'] ] ] ] ]}}">
+            <view class="icon">
+                <u-icon bind:__l="__l" name="/static/poster/i_applet.png" size="48" vueId="83f7f0c6-12"></u-icon>
+            </view>
+            <view class="text">小程序码</view>
+        </view>
+        <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}">
+            <view class="icon">
+                <u-icon bind:__l="__l" name="/static/poster/i_words.png" size="48" vueId="83f7f0c6-13"></u-icon>
+            </view>
+            <view class="text">文案修改</view>
+        </view>
+    </view>
+    <u-popup bind:__l="__l" bind:close="__e" data-event-opts="{{[ [ '^close',[ ['onCloseUpdate'] ] ] ]}}" round="{{10}}" show="{{is_modify}}" vueId="83f7f0c6-14" vueSlots="{{['default']}}" zIndex="{{99999}}">
+        <view class="words">
+            <view class="title">
+                <view class="text">文案修改</view>
+            </view>
+            <view class="form">
+                <u--form bind:__l="__l" labelPosition="left" labelWidth="60" vueId="{{'83f7f0c6-15'+','+'83f7f0c6-14'}}" vueSlots="{{['default']}}">
+                    <u-form-item bind:__l="__l" borderBottom="{{true}}" label="第1行：" vueId="{{'83f7f0c6-16'+','+'83f7f0c6-15'}}" vueSlots="{{['default']}}">
+                        <u--input bind:__l="__l" bind:input="__e" border="none" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','custom_text_1','$event',[] ],['form'] ] ] ] ]}}" value="{{form.custom_text_1}}" vueId="{{'83f7f0c6-17'+','+'83f7f0c6-16'}}"></u--input>
+                    </u-form-item>
+                    <u-form-item bind:__l="__l" borderBottom="{{true}}" label="第2行：" vueId="{{'83f7f0c6-18'+','+'83f7f0c6-15'}}" vueSlots="{{['default']}}">
+                        <u--input bind:__l="__l" bind:input="__e" border="none" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','custom_text_2','$event',[] ],['form'] ] ] ] ]}}" value="{{form.custom_text_2}}" vueId="{{'83f7f0c6-19'+','+'83f7f0c6-18'}}"></u--input>
+                    </u-form-item>
+                    <u-form-item bind:__l="__l" borderBottom="{{true}}" label="第3行：" vueId="{{'83f7f0c6-20'+','+'83f7f0c6-15'}}" vueSlots="{{['default']}}">
+                        <u--input bind:__l="__l" bind:input="__e" border="none" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','custom_text_3','$event',[] ],['form'] ] ] ] ]}}" value="{{form.custom_text_3}}" vueId="{{'83f7f0c6-21'+','+'83f7f0c6-20'}}"></u--input>
+                    </u-form-item>
+                    <u-form-item bind:__l="__l" borderBottom="{{true}}" label="第4行：" vueId="{{'83f7f0c6-22'+','+'83f7f0c6-15'}}" vueSlots="{{['default']}}">
+                        <u--input bind:__l="__l" bind:input="__e" border="none" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','custom_text_4','$event',[] ],['form'] ] ] ] ]}}" value="{{form.custom_text_4}}" vueId="{{'83f7f0c6-23'+','+'83f7f0c6-22'}}"></u--input>
+                    </u-form-item>
+                </u--form>
+            </view>
+            <view bindtap="__e" class="submit" data-event-opts="{{[ [ 'tap',[ [ 'onStartUpdate',['$event'] ] ] ] ]}}">
+                <view class="btn">
+                    <u-button bind:__l="__l" color="{{sys_theme}}" text="立即更新海报" vueId="{{'83f7f0c6-24'+','+'83f7f0c6-14'}}"></u-button>
+                </view>
+            </view>
+        </view>
+    </u-popup>
+</view>

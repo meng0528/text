@@ -1,0 +1,141 @@
+<view class="container">
+    <view style="{{'background: linear-gradient('+setting.store.sys_theme+', #f4f4f4);'}}">
+        <view class="banner">
+            <view class="goods-images">
+                <swiper bindchange="__e" class="swiper" current="{{current}}" data-event-opts="{{[ [ 'change',[ [ 'change',['$event'] ] ] ] ]}}">
+                    <swiper-item wx:for="{{details.image}}" wx:for-index="key" wx:key="key">
+                        <image class="img" src="{{item.file_path}}"></image>
+                    </swiper-item>
+                </swiper>
+                <view class="dot">
+                    <text>{{current+1+'/'+details.image.length}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="goods-info">
+        <view class="goods">
+            <view class="price">
+                <text class="goods-price">
+                    <text class="price-cell">¥</text>{{details.goods_price}}</text>
+                <text class="goods-line">{{'¥'+details.goods_line}}</text>
+            </view>
+            <view class="goods-name-share">
+                <view class="goods-name">
+                    <text>{{details.goods_name}}</text>
+                </view>
+                <view class="goods-share">
+                    <button class="share-btn" openType="share">
+                        <image src="../../../static/share.png"></image>
+                        <text>分享</text>
+                    </button>
+                </view>
+            </view>
+            <view class="selling-point">
+                <text>{{details.selling_point?details.selling_point:'暂无卖点'}}</text>
+            </view>
+        </view>
+        <view class="hr"></view>
+        <view class="ohter">
+            <text>快递：包邮</text>
+            <text>{{'销量：'+details.goods_sales}}</text>
+            <text>{{'库存：'+details.stock_num}}</text>
+        </view>
+        <view class="goods-details">
+            <view class="details-ider">
+                <u-divider bind:__l="__l" lineColor="#c4c6c9" text="详情介绍" textColor="#c4c6c9" vueId="298880a8-1"></u-divider>
+            </view>
+            <view class="goods-content">
+                <u-parse bind:__l="__l" content="{{details.goods_content}}" vueId="298880a8-2"></u-parse>
+            </view>
+            <view class="bottom-ider">
+                <u-divider bind:__l="__l" lineColor="#c4c6c9" text="到底了哟" textColor="#c4c6c9" vueId="298880a8-3"></u-divider>
+            </view>
+        </view>
+    </view>
+    <view class="bottom-btn">
+        <view class="btns">
+            <view class="all-icons">
+                <view bindtap="__e" class="icons" data-event-opts="{{[ [ 'tap',[ [ 'onGoodsList',['$event'] ] ] ] ]}}">
+                    <image src="../../../static/goods-icon.png"></image>
+                    <text class="service-text">列表</text>
+                </view>
+                <view class="icons" wx:if="{{setting.store.service.use_ing==10}}">
+                    <button class="contact-btn" openType="contact">
+                        <image src="../../../static/service.png"></image>
+                        <text class="service-text">客服</text>
+                    </button>
+                </view>
+                <view bindtap="__e" class="icons" data-event-opts="{{[ [ 'tap',[ [ 'onService',['$event'] ] ] ] ]}}" wx:if="{{setting.store.service.use_ing==20}}">
+                    <image src="../../../static/service.png"></image>
+                    <text class="service-text">客服</text>
+                </view>
+            </view>
+            <view class="all-btns">
+                <button class="share" openType="share">
+                    <view class="share">
+                        <text>分享好友</text>
+                    </view>
+                </button>
+                <view bindtap="__e" class="buy" data-event-opts="{{[ [ 'tap',[ [ 'onBuy',['$event'] ] ] ] ]}}">
+                    <text>立即购买</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <u-popup bind:__l="__l" bind:close="__e" closeOnClickOverlay="{{false}}" closeable="true" data-event-opts="{{[ [ '^close',[ ['close'] ] ] ]}}" mode="bottom" round="{{25}}" show="{{show}}" vueId="298880a8-4" vueSlots="{{['default']}}">
+        <view class="submit-info">
+            <view class="title">收件人信息</view>
+            <view class="addressee">
+                <u--form bind:__l="__l" class="vue-ref" data-ref="form1" labelPosition="left" labelWidth="auto" model="{{model1}}" rules="{{rules}}" vueId="{{'298880a8-5'+','+'298880a8-4'}}" vueSlots="{{['default']}}">
+                    <u-form-item bind:__l="__l" borderBottom="{{true}}" label="姓名" prop="addressee.name" vueId="{{'298880a8-6'+','+'298880a8-5'}}" vueSlots="{{['default']}}">
+                        <u--input bind:__l="__l" bind:input="__e" border="none" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','name','$event',[] ],['model1.addressee'] ] ] ] ]}}" placeholder="请输入收件人姓名" value="{{model1.addressee.name}}" vueId="{{'298880a8-7'+','+'298880a8-6'}}"></u--input>
+                    </u-form-item>
+                    <u-form-item bind:__l="__l" borderBottom="{{true}}" label="电话" prop="addressee.moblie" vueId="{{'298880a8-8'+','+'298880a8-5'}}" vueSlots="{{['default']}}">
+                        <u--input bind:__l="__l" bind:input="__e" border="none" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','moblie','$event',[] ],['model1.addressee'] ] ] ] ]}}" placeholder="请输入收件人电话" type="number" value="{{model1.addressee.moblie}}" vueId="{{'298880a8-9'+','+'298880a8-8'}}"></u--input>
+                    </u-form-item>
+                    <u-form-item bind:__l="__l" borderBottom="{{true}}" label="地址" prop="addressee.address" vueId="{{'298880a8-10'+','+'298880a8-5'}}" vueSlots="{{['default']}}">
+                        <u--input bind:__l="__l" bind:input="__e" border="none" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','address','$event',[] ],['model1.addressee'] ] ] ] ]}}" placeholder="请输入收货地址" value="{{model1.addressee.address}}" vueId="{{'298880a8-11'+','+'298880a8-10'}}"></u--input>
+                    </u-form-item>
+                    <u-form-item bind:__l="__l" borderBottom="{{true}}" label="留言" prop="addressee.remark" vueId="{{'298880a8-12'+','+'298880a8-5'}}" vueSlots="{{['default']}}">
+                        <u--textarea bind:__l="__l" bind:input="__e" border="none" count="{{true}}" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','remark','$event',[] ],['model1.addressee'] ] ] ] ]}}" height="30" maxlength="150" placeholder="购买留言" value="{{model1.addressee.remark}}" vueId="{{'298880a8-13'+','+'298880a8-12'}}"></u--textarea>
+                    </u-form-item>
+                </u--form>
+            </view>
+            <view class="number">
+                <view>数量</view>
+                <view>
+                    <u-number-box bind:__l="__l" bind:change="__e" bind:input="__e" data-event-opts="{{[ [ '^change',[ ['onChangeNum'] ] ],[ '^input',[ [ '__set_model',[ '','num','$event',[] ] ] ] ] ]}}" integer="{{true}}" max="{{9999}}" value="{{num}}" vueId="{{'298880a8-14'+','+'298880a8-4'}}" vueSlots="{{['minus','input','plus']}}">
+                        <view class="minus" slot="minus">
+                            <u-icon bind:__l="__l" name="minus" size="12" vueId="{{'298880a8-15'+','+'298880a8-14'}}"></u-icon>
+                        </view>
+                        <text class="input" slot="input" style="width:50px;text-align:center;">{{num}}</text>
+                        <view class="plus" slot="plus">
+                            <u-icon bind:__l="__l" color="#FFFFFF" name="plus" size="12" vueId="{{'298880a8-16'+','+'298880a8-14'}}"></u-icon>
+                        </view>
+                    </u-number-box>
+                </view>
+            </view>
+            <view class="unit-price">
+                <view>单价</view>
+                <view>
+                    <u--text bind:__l="__l" mode="price" text="{{details.goods_price}}" type="info" vueId="{{'298880a8-17'+','+'298880a8-4'}}"></u--text>
+                </view>
+            </view>
+            <view class="money">
+                <view>合计</view>
+                <view>
+                    <u--text bind:__l="__l" mode="price" size="20" text="{{count_money}}" type="error" vueId="{{'298880a8-18'+','+'298880a8-4'}}"></u--text>
+                </view>
+            </view>
+            <view class="submit-btns">
+                <view bindtap="__e" class="sumbit-btn esc" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}">
+                    <text>取消</text>
+                </view>
+                <view bindtap="__e" class="sumbit-btn" data-event-opts="{{[ [ 'tap',[ [ 'onSumbit',['$event'] ] ] ] ]}}">
+                    <text>立即提交</text>
+                </view>
+            </view>
+        </view>
+    </u-popup>
+</view>

@@ -1,0 +1,15 @@
+{
+    "navigationBarTitleText": "品牌信息",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "u-toast": "/node-modules/uview-ui/components/u-toast/u-toast",
+        "u--form": "/node-modules/uview-ui/components/u--form/u--form",
+        "u-form-item": "/node-modules/uview-ui/components/u-form-item/u-form-item",
+        "u--input": "/node-modules/uview-ui/components/u--input/u--input",
+        "u--textarea": "/node-modules/uview-ui/components/u--textarea/u--textarea",
+        "u-upload": "/node-modules/uview-ui/components/u-upload/u-upload",
+        "u-radio-group": "/node-modules/uview-ui/components/u-radio-group/u-radio-group",
+        "u-radio": "/node-modules/uview-ui/components/u-radio/u-radio",
+        "u-button": "/node-modules/uview-ui/components/u-button/u-button"
+    }
+}

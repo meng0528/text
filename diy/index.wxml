@@ -1,0 +1,5 @@
+<view class="container">
+    <view class="loading">
+        <u--image bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['click'] ] ] ]}}" height="360rpx" showLoading="{{true}}" src="/static/i/wifi.gif" vueId="7004ca50-1" width="360rpx"></u--image>
+    </view>
+</view>

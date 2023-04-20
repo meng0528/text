@@ -1,0 +1,27 @@
+<view class="withdraw">
+    <u-sticky bind:__l="__l" vueId="eb90a4e6-1" vueSlots="{{['default']}}">
+        <view class="tabs">
+            <u-tabs activeStyle="{{$root.a0}}" bind:__l="__l" bind:click="__e" current="{{active}}" data-event-opts="{{[ [ '^click',[ ['onClickTabs'] ] ] ]}}" lineColor="{{setting.store.sys_theme}}" list="{{tabs}}" scrollable="{{false}}" vueId="{{'eb90a4e6-2'+','+'eb90a4e6-1'}}"></u-tabs>
+        </view>
+    </u-sticky>
+    <view class="order">
+        <view class="item" wx:if="{{order.length>0}}" wx:for="{{order}}">
+            <view class="content">
+                <view class="title" wx:if="{{item.status==1}}">审核中</view>
+                <view class="title" wx:if="{{item.status==2}}">已通过</view>
+                <view class="title" wx:if="{{item.status==3}}">未通过</view>
+                <view class="date">{{'记录ID：'+item.id+''}}</view>
+            </view>
+            <view class="right">
+                <view class="money red" wx:if="{{active==3}}">{{'+'+item.price+'元'}}</view>
+                <view class="money red" wx:else>{{item.price+'元'}}</view>
+                <view class="d-date">{{item.create_time+''}}</view>
+            </view>
+        </view>
+        <view wx:if="{{order.length<=0}}">
+            <view class="empty">
+                <u-empty bind:__l="__l" icon="http://cdn.uviewui.com/uview/empty/data.png" mode="data" text="这里空空如也..." vueId="eb90a4e6-3"></u-empty>
+            </view>
+        </view>
+    </view>
+</view>

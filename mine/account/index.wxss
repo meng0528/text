@@ -1,0 +1,19 @@
+.submit {
+    margin: 30rpx auto;
+    width: 92%;
+}
+
+.panel {
+    background-color: #fff;
+    padding: 30rpx;
+}
+
+.panel .title {
+    color: #000;
+    font-size: 42rpx;
+    margin: 10rpx 0rpx;
+}
+
+.payment {
+    margin-top: 30rpx;
+}

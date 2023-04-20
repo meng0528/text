@@ -1,0 +1,12 @@
+.container {
+    background-color: #fff;
+}
+
+.container .form {
+    margin: 10rpx auto;
+    width: 92%;
+}
+
+.container .submit {
+    padding: 50rpx;
+}

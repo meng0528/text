@@ -1,0 +1,26 @@
+<view class="container">
+    <view class="form">
+        <u--form bind:__l="__l" class="vue-ref" data-ref="form1" model="{{model1}}" rules="{{rules}}" vueId="36a27fcd-1" vueSlots="{{['default']}}">
+            <u-form-item bind:__l="__l" borderBottom="{{true}}" prop="formDatas.name" vueId="{{'36a27fcd-2'+','+'36a27fcd-1'}}" vueSlots="{{['default']}}">
+                <u--input bind:__l="__l" bind:input="__e" border="surround" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','name','$event',[] ],['model1.formDatas'] ] ] ] ]}}" placeholder="请输入姓名" value="{{model1.formDatas.name}}" vueId="{{'36a27fcd-3'+','+'36a27fcd-2'}}"></u--input>
+            </u-form-item>
+            <u-form-item bind:__l="__l" bind:click="__e" borderBottom="{{true}}" data-event-opts="{{[ [ '^click',[ ['e0'] ] ] ]}}" prop="formDatas.gender" vueId="{{'36a27fcd-4'+','+'36a27fcd-1'}}" vueSlots="{{['default','right']}}">
+                <u--input bind:__l="__l" bind:input="__e" border="surround" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','gender','$event',[] ],['model1.formDatas'] ] ] ] ]}}" disabled="{{true}}" disabledColor="#ffffff" placeholder="请选择性别" value="{{model1.formDatas.gender}}" vueId="{{'36a27fcd-5'+','+'36a27fcd-4'}}"></u--input>
+                <u-icon bind:__l="__l" name="arrow-right" slot="right" vueId="{{'36a27fcd-6'+','+'36a27fcd-4'}}"></u-icon>
+            </u-form-item>
+            <u-form-item bind:__l="__l" borderBottom="{{true}}" prop="formDatas.iphone" vueId="{{'36a27fcd-7'+','+'36a27fcd-1'}}" vueSlots="{{['default']}}">
+                <u--input bind:__l="__l" bind:input="__e" border="surround" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','iphone','$event',[] ],['model1.formDatas'] ] ] ] ]}}" maxlength="11" placeholder="请输入电话号码" value="{{model1.formDatas.iphone}}" vueId="{{'36a27fcd-8'+','+'36a27fcd-7'}}"></u--input>
+            </u-form-item>
+            <u-form-item bind:__l="__l" borderBottom="{{true}}" prop="formDatas.email" vueId="{{'36a27fcd-9'+','+'36a27fcd-1'}}" vueSlots="{{['default']}}">
+                <u--input bind:__l="__l" bind:input="__e" border="surround" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','email','$event',[] ],['model1.formDatas'] ] ] ] ]}}" placeholder="请输入邮箱号" value="{{model1.formDatas.email}}" vueId="{{'36a27fcd-10'+','+'36a27fcd-9'}}"></u--input>
+            </u-form-item>
+            <u-form-item bind:__l="__l" borderBottom="{{true}}" prop="formDatas.reason" vueId="{{'36a27fcd-11'+','+'36a27fcd-1'}}" vueSlots="{{['default']}}">
+                <u--textarea bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','reason','$event',[] ],['model1.formDatas'] ] ] ] ]}}" placeholder="请输入申请理由" value="{{model1.formDatas.reason}}" vueId="{{'36a27fcd-12'+','+'36a27fcd-11'}}"></u--textarea>
+            </u-form-item>
+        </u--form>
+        <u-action-sheet actions="{{actions}}" bind:__l="__l" bind:close="__e" bind:select="__e" data-event-opts="{{[ [ '^close',[ ['e1'] ] ],[ '^select',[ ['showGenderSelect'] ] ] ]}}" show="{{showGender}}" title="请选择性别" vueId="36a27fcd-13"></u-action-sheet>
+    </view>
+    <view class="submit">
+        <u-button bind:__l="__l" bind:click="__e" color="{{setting.store.sys_theme}}" data-event-opts="{{[ [ '^click',[ ['submit'] ] ] ]}}" text="立即提交" vueId="36a27fcd-14"></u-button>
+    </view>
+</view>

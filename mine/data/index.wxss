@@ -1,0 +1,60 @@
+.remarks {
+    margin: 30rpx auto;
+    width: 90%;
+}
+
+.remarks .title {
+    display: flex;
+    font-size: 28rpx;
+    font-weight: bolder;
+    justify-content: space-between;
+    margin-bottom: 15rpx;
+}
+
+.remarks .text {
+    font-size: 24rpx;
+}
+
+.data {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 50rpx 0rpx;
+}
+
+.data .number {
+    font-size: 81rpx;
+    font-weight: bolder;
+}
+
+.tabs {
+    margin: 30rpx auto 0rpx;
+    width: 92%;
+}
+
+.panel,.tabs {
+    background-color: #fff;
+    border-radius: 15rpx;
+}
+
+.panel {
+    margin: 30rpx auto;
+    padding: 30rpx;
+    width: 84%;
+}
+
+.panel .title {
+    margin-bottom: 30rpx;
+}
+
+.submit {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 92%;
+}
+
+.submit .btn {
+    margin: 15rpx 0rpx;
+}

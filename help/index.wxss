@@ -1,0 +1,27 @@
+.team {
+    margin: 20rpx auto;
+    width: 96%;
+}
+
+.help {
+    margin: 0 auto;
+    width: 96%;
+}
+
+.help .item {
+    background-color: #fff;
+    border-radius: 15rpx;
+    margin: 15rpx 0rpx;
+    padding: 30rpx;
+}
+
+.help .item .title {
+    border-bottom: 1rpx solid #f4f4f4;
+    font-weight: bolder;
+    margin-bottom: 15rpx;
+    padding-bottom: 15rpx;
+}
+
+.help .item .content {
+    font-size: 28rpx;
+}

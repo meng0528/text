@@ -1,0 +1,49 @@
+<view class="container">
+    <u-navbar autoBack="{{false}}" bgColor="rgba(255,255,255,0)" bind:__l="__l" title="商城" titleStyle="{{titleStyle}}" vueId="5caada48-1" vueSlots="{{['left']}}">
+        <view slot="left"></view>
+    </u-navbar>
+    <view class="top-banner" style="{{'background: linear-gradient('+setting.store.sys_theme+', #f4f4f4);'}}">
+        <view class="banners">
+            <u-swiper autoplay="true" bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['onClickBanner'] ] ] ]}}" height="180" indicator="true" indicatorMode="dot" keyName="file_path" list="{{banner}}" showTitle="true" vueId="5caada48-2"></u-swiper>
+        </view>
+        <view class="notice">
+            <u-notice-bar bind:__l="__l" text="{{setting.store.store_notice}}" vueId="5caada48-3"></u-notice-bar>
+        </view>
+    </view>
+    <view class="category">
+        <u-tabs activeStyle="{color:'#303133',fontWeight:'bold',transform:'scale(1.0)'}" bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['onCategory'] ] ] ]}}" inactiveStyle="{color:'#606266',transform:'scale(1)'}" itemStyle="padding-left: 15px; padding-right: 15px; height: 34px;" lineColor="#0090ff" lineHeight="5" lineWidth="20" list="{{category}}" vueId="5caada48-4"></u-tabs>
+    </view>
+    <view class="goods-lists" wx:if="{{goodsLists.length}}">
+        <view bindtap="__e" class="goods" data-event-opts="{{[ [ 'tap',[ [ 'goodsDetails',['$0'],[ [ ['goodsLists','',index,'goods_id'] ] ] ] ] ] ]}}" wx:for="{{goodsLists}}" wx:key="index">
+            <view class="cover">
+                <image mode="heightFix" src="{{item.cover_image}}"></image>
+            </view>
+            <view class="goods-info">
+                <view class="tags-num">
+                    <view class="goods-tags" wx:if="{{item.tags.length}}">
+                        <block wx:for="{{item.tags}}" wx:for-index="i" wx:for-item="item1">
+                            <view class="tags-lable" wx:if="{{i%2==0}}">
+                                <u-tag bind:__l="__l" size="mini" text="{{item1}}" vueId="{{'5caada48-5-'+index+'-'+i}}"></u-tag>
+                            </view>
+                            <view class="tags-lable" wx:else>
+                                <u-tag bind:__l="__l" size="mini" text="{{item1}}" type="error" vueId="{{'5caada48-6-'+index+'-'+i}}"></u-tag>
+                            </view>
+                        </block>
+                    </view>
+                    <view class="num">{{'已售'+item.goods_sales+''}}</view>
+                </view>
+                <view class="price-title">
+                    <view class="title">{{item.goods_name}}</view>
+                    <view class="price">
+                        <text class="goods_price">{{'¥'+item.goods_price}}</text>
+                        <text class="goods_line" wx:if="{{item.goods_line>0}}">{{'¥'+item.goods_line}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="empty" wx:else>
+        <image src="../../../static/empty.png"></image>
+    </view>
+    <tabbar active="40" bind:__l="__l" vueId="5caada48-7"></tabbar>
+</view>

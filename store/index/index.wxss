@@ -1,0 +1,110 @@
+.container .top-banner {
+    height: 650rpx;
+    position: relative;
+}
+
+.container .top-banner .banners {
+    margin: 0 auto;
+    padding-top: 210rpx;
+    width: 94%;
+}
+
+.container .top-banner .notice {
+    margin: 15rpx auto;
+    width: 94%;
+}
+
+.container .goods-lists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 94%;
+}
+
+.container .goods-lists .goods {
+    background-color: #fff;
+    border-radius: 20rpx;
+    height: 580rpx;
+    margin-top: 20rpx;
+    width: 345rpx;
+}
+
+.container .goods-lists .goods .cover {
+    display: flex;
+    height: 345rpx;
+    justify-content: center;
+}
+
+.container .goods-lists .goods .cover image {
+    border-radius: 10rpx;
+    height: 100%;
+    width: 100%;
+}
+
+.container .goods-lists .goods .goods-info {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.container .goods-lists .goods .goods-info .tags-num {
+    display: flex;
+    height: 60rpx;
+}
+
+.container .goods-lists .goods .goods-info .tags-num .goods-tags {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    width: 72%;
+}
+
+.container .goods-lists .goods .goods-info .tags-num .goods-tags .tags-lable {
+    margin-right: 8rpx;
+}
+
+.container .goods-lists .goods .goods-info .tags-num .num {
+    color: #9da3af;
+    font-size: 22rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    overflow: hidden;
+}
+
+.container .goods-lists .goods .goods-info .price-title .price {
+    align-items: center;
+    display: flex;
+    height: 65rpx;
+}
+
+.container .goods-lists .goods .goods-info .price-title .price .goods_price {
+    color: #e45656;
+    font-size: 36rpx;
+    font-weight: 700;
+}
+
+.container .goods-lists .goods .goods-info .price-title .price .goods_line {
+    color: #c4c6c9;
+    font-size: 28rpx;
+    margin-left: 20rpx;
+    text-decoration: line-through;
+}
+
+.container .goods-lists .goods .goods-info .price-title .title {
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    color: #767a82;
+    display: -webkit-box;
+    font-size: 24rpx;
+    height: 95rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.container .empty {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 150rpx auto;
+    width: 94%;
+}

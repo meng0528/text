@@ -1,0 +1,104 @@
+<view class="container">
+    <view class="banner" style="{{'background-color:'+setting.store.sys_theme}}" wx:if="{{setting.store.index.default_status==10}}">
+        <view class="nav-box">
+            <view class="nav-title">
+                <text class="nav-text">{{setting.store.index.custom_line_text_1}}</text>
+                <text class="nav-text">{{setting.store.index.custom_line_text_2}}</text>
+            </view>
+            <view class="nav-desc">
+                <text class="nav-sub">{{setting.store.index.custom_line_text_3}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="banner-top" wx:if="{{banner.length}}">
+        <u-swiper autoplay="true" bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['onClickBanner'] ] ] ]}}" height="180" indicator="true" indicatorMode="dot" keyName="file_path" list="{{banner}}" showTitle="true" vueId="8dd740cc-1"></u-swiper>
+    </view>
+    <view class="banner banner_ad" style="{{'background-color:'+setting.store.sys_theme}}" wx:if="{{setting.flow.video.status==1&&setting.store.index.default_status==20}}">
+        <ad adTheme="white" adType="video" unitId="{{setting.flow.video.video_ad}}"></ad>
+    </view>
+    <view class="notice">
+        <u-notice-bar bgColor="#fff" bind:__l="__l" color="#595959" text="{{setting.store.notice}}" vueId="8dd740cc-2"></u-notice-bar>
+    </view>
+    <view class="window">
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'onClickWifi',['$event'] ] ] ] ]}}" style="{{'background-color:'+setting.store.sys_theme}}">
+            <view class="icon">
+                <u-icon bind:__l="__l" name="/static/wifi-i.png" size="48" vueId="8dd740cc-3"></u-icon>
+            </view>
+            <view class="content">
+                <view class="title">创建WiFi码</view>
+                <view class="small">一键连接·安全防蹭网</view>
+            </view>
+        </view>
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'onClickMine',['$event'] ] ] ] ]}}" style="{{'background-color:'+setting.store.sys_theme}}">
+            <view class="icon">
+                <u-icon bind:__l="__l" name="/static/me.png" size="48" vueId="8dd740cc-4"></u-icon>
+            </view>
+            <view class="content">
+                <view class="title">我的WiFi码</view>
+                <view class="small">查看管理WiFi码</view>
+            </view>
+        </view>
+    </view>
+    <view class="blocks" wx:if="{{setting.flow.video.status==0}}">
+        <view class="head">
+            <view class="title" style="{{'color:'+store.linker.main_color+';'}}">
+                <view class="line" style="{{'border:1rpx solid '+store.linker.main_color+';'}}"></view>
+                <view class="text">特色功能</view>
+            </view>
+        </view>
+        <view class="function">
+            <view class="item">
+                <view class="icon">
+                    <u-icon bind:__l="__l" name="/static/qudaoyinliu.png" size="28" vueId="8dd740cc-5"></u-icon>
+                </view>
+                <view class="content">
+                    <view class="title">{{setting.store.characteristic.one.title}}</view>
+                    <view class="small">{{setting.store.characteristic.one.desc}}</view>
+                </view>
+            </view>
+            <view class="item">
+                <view class="icon">
+                    <u-icon bind:__l="__l" name="/static/hangyejiejuefangan.png" size="28" vueId="8dd740cc-6"></u-icon>
+                </view>
+                <view class="content">
+                    <view class="title">{{setting.store.characteristic.two.title}}</view>
+                    <view class="small">{{setting.store.characteristic.two.desc}}</view>
+                </view>
+            </view>
+            <view class="item">
+                <view class="icon">
+                    <u-icon bind:__l="__l" name="/static/chuda.png" size="28" vueId="8dd740cc-7"></u-icon>
+                </view>
+                <view class="content">
+                    <view class="title">{{setting.store.characteristic.three.title}}</view>
+                    <view class="small">{{setting.store.characteristic.three.desc}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="banner banner_ad" style="{{'background-color:'+setting.store.sys_theme}}" wx:if="{{setting.flow.video.status==1&&setting.store.index.default_status==10}}">
+        <ad adTheme="white" adType="video" unitId="{{setting.flow.video.video_ad}}"></ad>
+    </view>
+    <view class="blocks">
+        <view class="head">
+            <view class="title" style="{{'color:'+store.linker.main_color+';'}}">
+                <view class="line" style="{{'border:1rpx solid '+setting.store.sys_theme+';'}}"></view>
+                <view class="text" style="{{'border:1rpx solid '+store.linker.main_color+';'+'color:'+setting.store.sys_theme}}">更多功能</view>
+            </view>
+        </view>
+        <view class="tool">
+            <u-grid bind:__l="__l" border="{{false}}" col="4" vueId="8dd740cc-8" vueSlots="{{['default']}}">
+                <u-grid-item bind:__l="__l" vueId="{{'8dd740cc-9-'+index+','+'8dd740cc-8'}}" vueSlots="{{['default']}}" wx:for="{{jump}}" wx:key="index">
+                    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'onTool',[index] ] ] ] ]}}">
+                        <view class="icon">
+                            <image src="{{item.image.file_path}}" style="border-radius:10rpx;" wx:if="{{item.radius==10}}"></image>
+                            <image src="{{item.image.file_path}}" style="border-radius:100rpx;" wx:else></image>
+                        </view>
+                        <view class="text">{{item.title}}</view>
+                    </view>
+                </u-grid-item>
+            </u-grid>
+        </view>
+    </view>
+    <tabbar active="10" bind:__l="__l" vueId="8dd740cc-10"></tabbar>
+</view>

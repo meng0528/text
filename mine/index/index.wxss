@@ -1,0 +1,186 @@
+.copyright {
+    margin-top: 40rpx;
+    text-align: center;
+}
+
+.copyright .text {
+    color: #ddd;
+    font-size: 28rpx;
+}
+
+.invitation {
+    border-radius: 15rpx;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 90%;
+}
+
+.invitation .invitation-btn {
+    height: 120rpx;
+    width: 100%;
+}
+
+.on-login {
+    margin: 25rpx auto;
+    width: 90%;
+}
+
+.my-order {
+    background-color: #fff;
+    border-radius: 15rpx;
+    box-shadow: 10rpx 10rpx 20rpx #dfdfdf;
+    height: 220rpx;
+    margin: 0 auto 5rpx;
+    width: 92%;
+}
+
+.my-order .order-icon {
+    display: flex;
+    height: 100rpx;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.my-order .order-icon .icon-style {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 20rpx;
+    justify-content: space-around;
+}
+
+.my-order .order-icon .icon-style image {
+    height: 60rpx;
+    width: 60rpx;
+}
+
+.bg {
+    margin-bottom: 15rpx;
+    position: relative;
+}
+
+.bg .back-top {
+    height: 360rpx;
+    width: 100%;
+}
+
+.user {
+    background-color: #fff;
+    border-radius: 15rpx;
+    bottom: 0rpx;
+    left: 5%;
+    margin: 0 auto;
+    padding: 15rpx 20rpx;
+    position: absolute;
+    width: 85%;
+}
+
+.user .info {
+    align-items: center;
+    border-bottom: 1rpx solid #f4f4f4;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 15rpx;
+}
+
+.user .info,.user .info .content {
+    display: flex;
+}
+
+.user .info .content .headimg {
+    margin-right: 15rpx;
+}
+
+.user .info .content .nickname .name {
+    font-size: 42rpx;
+    font-weight: bolder;
+    margin-bottom: 15rpx;
+}
+
+.user .info .content .nickname .grade {
+    display: flex;
+    flex-direction: row;
+}
+
+.user .info .content .nickname .grade .uid {
+    margin-left: 15rpx;
+}
+
+.user .data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 30rpx 0rpx;
+}
+
+.user .data .line {
+    border-left: 1rpx solid #f4f4f4;
+}
+
+.user .data .item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 20rpx 0rpx;
+}
+
+.user .data .item .number {
+    font-size: 36rpx;
+    font-weight: bolder;
+}
+
+.user .data .item .text {
+    font-size: 24rpx;
+    margin-left: 15rpx;
+    margin-top: 10rpx;
+}
+
+.tool {
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 91%;
+}
+
+.tool,.tool .item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.tool .item {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 15rpx;
+    margin: 15rpx 0rpx;
+    padding: 30rpx 20rpx 30rpx 0rpx;
+    width: 45%;
+}
+
+.tool .item .left {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.tool .item .left .icon {
+    padding-left: 30rpx;
+}
+
+.tool .item .left .title {
+    font-size: 28rpx;
+    margin-left: 15rpx;
+}
+
+.tool .item .contact-btn {
+    align-items: center;
+    background-color: hsla(0,0%,100%,0);
+    color: #595959;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 28rpx!important;
+    margin: 0rpx!important;
+    padding: 0rpx!important;
+    text-align: left;
+}

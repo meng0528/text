@@ -1,0 +1,14 @@
+{
+    "navigationBarTitleText": "精品商城",
+    "enablePullDownRefresh": false,
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "u-navbar": "/node-modules/uview-ui/components/u-navbar/u-navbar",
+        "u-swiper": "/node-modules/uview-ui/components/u-swiper/u-swiper",
+        "u-notice-bar": "/node-modules/uview-ui/components/u-notice-bar/u-notice-bar",
+        "u-tabs": "/node-modules/uview-ui/components/u-tabs/u-tabs",
+        "u-tag": "/node-modules/uview-ui/components/u-tag/u-tag",
+        "tabbar": "/components/tabbar/tabbar"
+    }
+}

@@ -1,0 +1,38 @@
+<view class="container">
+    <u-toast bind:__l="__l" class="vue-ref" data-ref="uToast" vueId="1f507abd-1"></u-toast>
+    <view class="tabs">
+        <u-tabs activeStyle="{{$root.a0}}" bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['onClickTabs'] ] ] ]}}" lineColor="{{setting.store.sys_theme}}" list="{{tabs}}" scrollable="{{false}}" vueId="1f507abd-2"></u-tabs>
+    </view>
+    <view class="coupon" wx:if="{{coupon.length>0}}">
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'onShowCode',['$0'],[ [ ['coupon','',index] ] ] ] ] ] ]}}" wx:for="{{coupon}}" wx:key="index">
+            <view class="top">
+                <view class="head" style="{{'background-color:'+setting.store.sys_theme+';'}}">
+                    <view class="number">
+                        <text>￥</text>{{item.coupon.price}}</view>
+                    <view class="text">优惠券</view>
+                </view>
+                <view class="content">
+                    <view class="title">{{item.coupon.name}}</view>
+                    <view class="tips">{{item.coupon.remarks}}</view>
+                    <view class="line">
+                        <view class="date">
+                            <view>{{item.merchant.name}}</view>
+                        </view>
+                        <view class="number">
+                            <u-avatar bind:__l="__l" src="{{item.img_path}}" vueId="{{'1f507abd-3-'+index}}"></u-avatar>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="mask">
+                <u-tag bind:__l="__l" text="已核销" type="info" vueId="{{'1f507abd-4-'+index}}" wx:if="{{item.status==2}}"></u-tag>
+                <u-tag bind:__l="__l" text="未核销" type="error" vueId="{{'1f507abd-5-'+index}}" wx:if="{{item.status==1}}"></u-tag>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{coupon.length<=0}}">
+        <view class="empty">
+            <u-empty bind:__l="__l" icon="http://cdn.uviewui.com/uview/empty/data.png" mode="data" text="这里空空如也..." vueId="1f507abd-6"></u-empty>
+        </view>
+    </view>
+</view>

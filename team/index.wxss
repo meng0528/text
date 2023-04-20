@@ -1,0 +1,126 @@
+.team {
+    margin: 0 auto;
+    width: 93%;
+}
+
+.team .item {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 15rpx;
+    display: flex;
+    flex-direction: row;
+    margin: 25rpx 0rpx;
+    padding: 50rpx 30rpx;
+}
+
+.team .item .icon {
+    width: 25%;
+}
+
+.team .item .content {
+    font-size: 28rpx;
+    width: 65%;
+}
+
+.team .item .content .h {
+    color: #000;
+}
+
+.team .item .content .nickname {
+    color: #000;
+    font-size: 36rpx;
+}
+
+.team .item .content .nickname .name {
+    color: #595959;
+    font-size: 24rpx;
+    margin-left: 10rpx;
+}
+
+.team .item .content .phone {
+    margin: 15rpx 0rpx;
+}
+
+.team .item .arrow {
+    width: 10%;
+}
+
+.search {
+    margin: 0 auto;
+    padding: 15rpx;
+    width: 90%;
+}
+
+.search,.user {
+    background-color: #fff;
+    border-radius: 15rpx;
+}
+
+.user {
+    margin: 30rpx auto 0;
+    padding: 30rpx 20rpx;
+    width: 89%;
+}
+
+.user .info {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 15rpx;
+}
+
+.user .info,.user .info .content {
+    display: flex;
+}
+
+.user .info .content .headimg {
+    margin-right: 15rpx;
+}
+
+.user .info .content .nickname .name {
+    font-size: 42rpx;
+    font-weight: bolder;
+    margin-bottom: 15rpx;
+}
+
+.user .info .content .nickname .grade {
+    display: flex;
+    flex-direction: row;
+}
+
+.user .info .content .nickname .grade .uid {
+    margin-left: 15rpx;
+}
+
+.data {
+    background-color: #fff;
+    border-radius: 15rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 30rpx auto;
+    padding: 50rpx 0rpx;
+    width: 94%;
+}
+
+.data .line {
+    border-left: 1rpx solid #f4f4f4;
+}
+
+.data .item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 20rpx 0rpx;
+}
+
+.data .item .number {
+    font-size: 36rpx;
+    font-weight: bolder;
+}
+
+.data .item .text {
+    font-size: 24rpx;
+    margin-left: 15rpx;
+    margin-top: 10rpx;
+}

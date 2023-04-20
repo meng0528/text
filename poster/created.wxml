@@ -1,0 +1,59 @@
+<view class="container">
+    <u-toast bind:__l="__l" class="vue-ref" data-ref="uToast" vueId="a18db9f2-1"></u-toast>
+    <view class="banner" wx:if="{{setting.flow.banner.status==1}}">
+        <ad unitId="{{setting.flow.banner.banner_ad}}"></ad>
+    </view>
+    <view class="banner" wx:if="{{setting.flow.banner.status==0}}">
+        <u-swiper bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['onClickBanner'] ] ] ]}}" keyName="file_path" list="{{banner}}" vueId="a18db9f2-2"></u-swiper>
+    </view>
+    <view class="tips">
+        <view class="item">
+            <view class="icon">
+                <u-icon bind:__l="__l" name="/static/i/Wi-Fi.png" vueId="a18db9f2-3"></u-icon>
+            </view>
+            <view class="text">一键快速链接</view>
+        </view>
+        <view class="item">
+            <view class="icon">
+                <u-icon bind:__l="__l" name="/static/i/lock.png" vueId="a18db9f2-4"></u-icon>
+            </view>
+            <view class="text">无需告知密码</view>
+        </view>
+        <view class="item">
+            <view class="icon">
+                <u-icon bind:__l="__l" name="/static/i/isoc.png" vueId="a18db9f2-5"></u-icon>
+            </view>
+            <view class="text">安全防蹭网</view>
+        </view>
+    </view>
+    <u-action-sheet actions="{{type}}" bind:__l="__l" bind:close="__e" bind:select="__e" cancelText="取消选择" closeOnClickOverlay="{{true}}" data-event-opts="{{[ [ '^select',[ ['onSelectType'] ] ],[ '^close',[ ['onCloseType'] ] ] ]}}" description="团长可邀请拓展员/商家,拓展员仅可邀请商家" safeAreaInsetBottom="{{true}}" show="{{is_type}}" title="选择邀请类型" vueId="a18db9f2-6"></u-action-sheet>
+    <view class="form">
+        <u--form bind:__l="__l" borderBottom="{{true}}" labelPosition="left" vueId="a18db9f2-7" vueSlots="{{['default']}}">
+            <u-form-item bind:__l="__l" label="邀请类型" labelWidth="70" vueId="{{'a18db9f2-8'+','+'a18db9f2-7'}}" vueSlots="{{['default']}}">
+                <view bindtap="__e" class="type" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">{{level_text}}</view>
+            </u-form-item>
+            <u-form-item bind:__l="__l" label="分销比例" labelWidth="70" vueId="{{'a18db9f2-9'+','+'a18db9f2-7'}}" vueSlots="{{['default']}}">
+                <u-number-box bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','commission','$event',[] ] ] ] ] ]}}" max="{{90}}" min="{{1}}" value="{{commission}}" vueId="{{'a18db9f2-10'+','+'a18db9f2-9'}}"></u-number-box>
+            </u-form-item>
+        </u--form>
+        <view class="item">
+            <view class="security" wx:for="{{setting.store.settlement_desc}}" wx:key="index">
+                <view class="icon">
+                    <u-icon bind:__l="__l" name="info-circle" vueId="{{'a18db9f2-11-'+index}}"></u-icon>
+                </view>
+                <view class="text">{{item}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="submit">
+        <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'onSubmit',['$event'] ] ] ] ]}}">
+            <u-button bind:__l="__l" color="#3669F8" text="一键生成邀请码" vueId="a18db9f2-12"></u-button>
+        </view>
+        <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'onToTeam',['$event'] ] ] ] ]}}">
+            <u-button bind:__l="__l" color="#3669F8" plain="{{true}}" text="查看团队成员" vueId="a18db9f2-13"></u-button>
+        </view>
+    </view>
+    <view class="ad" wx:if="{{setting.store.flow.video.status==1}}">
+        <ad adTheme="white" adType="video" unitId="{{setting.store.flow.video.video_ad}}"></ad>
+    </view>
+</view>

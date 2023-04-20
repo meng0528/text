@@ -1,0 +1,59 @@
+<view class="container">
+    <u-toast bind:__l="__l" class="vue-ref" data-ref="uToast" vueId="1209ebf3-1"></u-toast>
+    <view class="banner" wx:if="{{setting.flow.banner.status==1}}">
+        <ad unitId="{{setting.flow.banner.banner_ad}}"></ad>
+    </view>
+    <view class="banner" wx:if="{{setting.flow.banner.status==0}}">
+        <u-swiper bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['onClickBanner'] ] ] ]}}" keyName="file_path" list="{{banner}}" vueId="1209ebf3-2"></u-swiper>
+    </view>
+    <view class="tips">
+        <view class="item">
+            <view class="icon">
+                <u-icon bind:__l="__l" name="/static/i/Wi-Fi.png" vueId="1209ebf3-3"></u-icon>
+            </view>
+            <view class="text">一键快速链接</view>
+        </view>
+        <view class="item">
+            <view class="icon">
+                <u-icon bind:__l="__l" name="/static/i/lock.png" vueId="1209ebf3-4"></u-icon>
+            </view>
+            <view class="text">无需告知密码</view>
+        </view>
+        <view class="item">
+            <view class="icon">
+                <u-icon bind:__l="__l" name="/static/i/isoc.png" vueId="1209ebf3-5"></u-icon>
+            </view>
+            <view class="text">安全防蹭网</view>
+        </view>
+    </view>
+    <view class="form">
+        <u--form bind:__l="__l" borderBottom="{{true}}" labelPosition="left" vueId="1209ebf3-6" vueSlots="{{['default']}}">
+            <u-form-item bind:__l="__l" label="平台客服" labelWidth="70" vueId="{{'1209ebf3-7'+','+'1209ebf3-6'}}" vueSlots="{{['default']}}">
+                <u--input bind:__l="__l" bind:input="__e" border="none" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','pr_mobile','$event',[] ],['form'] ] ] ] ]}}" disabled="{{true}}" disabledColor="#fff" placeholder="请输入平台客服" value="{{form.pr_mobile}}" vueId="{{'1209ebf3-8'+','+'1209ebf3-7'}}"></u--input>
+            </u-form-item>
+            <u-form-item bind:__l="__l" label="角色类型" labelWidth="70" vueId="{{'1209ebf3-9'+','+'1209ebf3-6'}}" vueSlots="{{['default']}}">
+                <u--input bind:__l="__l" bind:input="__e" border="none" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','level_name','$event',[] ],['form'] ] ] ] ]}}" disabled="{{true}}" disabledColor="#fff" placeholder="请输入角色类型" value="{{form.level_name}}" vueId="{{'1209ebf3-10'+','+'1209ebf3-9'}}"></u--input>
+            </u-form-item>
+            <u-form-item bind:__l="__l" label="真实姓名" labelWidth="70" vueId="{{'1209ebf3-11'+','+'1209ebf3-6'}}" vueSlots="{{['default']}}" wx:if="{{setting.store.is_close==10}}">
+                <u--input bind:__l="__l" bind:input="__e" border="none" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','real_name','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入真实姓名" value="{{form.real_name}}" vueId="{{'1209ebf3-12'+','+'1209ebf3-11'}}"></u--input>
+            </u-form-item>
+            <u-form-item bind:__l="__l" label="绑定手机" labelWidth="70" vueId="{{'1209ebf3-13'+','+'1209ebf3-6'}}" vueSlots="{{['default']}}" wx:if="{{setting.store.is_close==10}}">
+                <u--input bind:__l="__l" bind:input="__e" border="none" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','mobile','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入绑定的手机号码" value="{{form.mobile}}" vueId="{{'1209ebf3-14'+','+'1209ebf3-13'}}"></u--input>
+            </u-form-item>
+        </u--form>
+        <view class="item">
+            <view class="security" wx:for="{{setting.store.settlement_desc}}">
+                <view class="icon">
+                    <u-icon bind:__l="__l" name="info-circle" vueId="{{'1209ebf3-15-'+index}}"></u-icon>
+                </view>
+                <view class="text">{{item}}</view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="submit" data-event-opts="{{[ [ 'tap',[ [ 'doInvitation',['$event'] ] ] ] ]}}">
+        <u-button bind:__l="__l" color="#3669F8" text="立即申请加入" vueId="1209ebf3-16"></u-button>
+    </view>
+    <view class="ad" wx:if="{{setting.store.flow.video.status==1}}">
+        <ad adTheme="white" adType="video" unitId="{{setting.store.flow.video.video_ad}}"></ad>
+    </view>
+</view>

@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "领取记录",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "u-toast": "/node-modules/uview-ui/components/u-toast/u-toast",
+        "u-tabs": "/node-modules/uview-ui/components/u-tabs/u-tabs",
+        "u-avatar": "/node-modules/uview-ui/components/u-avatar/u-avatar",
+        "u-tag": "/node-modules/uview-ui/components/u-tag/u-tag",
+        "u-empty": "/node-modules/uview-ui/components/u-empty/u-empty"
+    }
+}

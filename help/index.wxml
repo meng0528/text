@@ -1,0 +1,13 @@
+<view class="container">
+    <view bindtap="__e" class="team" data-event-opts="{{[ [ 'tap',[ [ 'goApply',['$event'] ] ] ] ]}}" wx:if="{{userInfo&&!userInfo.level&&is_check_print&&setting.store.is_close==10}}">
+        <u-button bind:__l="__l" color="{{setting.store.sys_theme}}" text="申请成为团长" vueId="5dd698e9-1"></u-button>
+    </view>
+    <view class="help">
+        <view class="item" wx:for="{{lists}}" wx:key="index">
+            <view class="title">{{item.title}}</view>
+            <view class="content">
+                <rich-text nodes="{{item.content}}"></rich-text>
+            </view>
+        </view>
+    </view>
+</view>

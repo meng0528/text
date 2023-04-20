@@ -1,0 +1,87 @@
+page {
+    background-color: #f4f4f4;
+}
+
+.tabs {
+    background-color: #fff;
+}
+
+.order {
+    margin: 0 auto;
+    width: 94%;
+}
+
+.order .item {
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1rpx solid #f4f4f4;
+    border-radius: 10rpx;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15rpx;
+    padding: 30rpx;
+}
+
+.order .item .image {
+    width: 80px;
+}
+
+.order .item .content {
+    color: #b1b1b1;
+    width: 50%;
+}
+
+.order .item .content .d-date {
+    font-size: 24rpx;
+    margin-top: 15rpx;
+}
+
+.order .item .right {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    width: 60%;
+}
+
+.order .item .right .red {
+    color: beige;
+}
+
+.order .item .right .money {
+    font-size: 32rpx;
+    margin-left: 10rpx;
+}
+
+.order .item .title {
+    font-size: 28rpx;
+    font-weight: bolder;
+    margin-bottom: 15rpx;
+}
+
+.order .item .date {
+    font-size: 24rpx;
+}
+
+.order .item .state {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.order .item .state .text {
+    font-size: 28rpx;
+}
+
+.order .item .state .text.no {
+    color: #6495ed;
+    margin-top: 15rpx;
+}
+
+.order .item .state.red {
+    color: red;
+}
+
+.order .item .state.green {
+    color: green;
+}

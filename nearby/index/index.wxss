@@ -1,0 +1,150 @@
+.shop {
+    border-radius: 10rpx;
+    margin: 15rpx auto 0;
+    width: 95%;
+}
+
+.shop .item {
+    background-color: #fff;
+    border-radius: 20rpx;
+    font-size: 28rpx;
+    margin-bottom: 15rpx;
+    padding: 20rpx;
+}
+
+.shop .item .top {
+    align-items: center;
+    border-bottom: 1rpx solid #f4f4f4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 15rpx;
+}
+
+.shop .item .top .logo {
+    width: 20%;
+}
+
+.shop .item .top .content {
+    width: 55%;
+}
+
+.shop .item .top .content .name {
+    font-size: 32rpx;
+    font-weight: bolder;
+}
+
+.shop .item .top .content .score {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin: 15rpx 0rpx;
+}
+
+.shop .item .top .content .score .text {
+    font-size: 24rpx;
+    margin-left: 15rpx;
+}
+
+.shop .item .top .content .address {
+    color: #ccc;
+    font-size: 24rpx;
+}
+
+.shop .item .top .location {
+    width: 20%;
+}
+
+.shop .item .bottom {
+    justify-content: flex-end;
+    margin-top: 15rpx;
+    padding-top: 10rpx;
+}
+
+.shop .item .bottom,.shop .item .bottom .tips {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.shop .item .bottom .tips .text {
+    font-size: 24rpx;
+    margin: 0rpx 10rpx;
+}
+
+.nearby {
+    background-color: #fff;
+    border-radius: 20rpx;
+    margin: 0 auto;
+    padding-bottom: 15rpx;
+    padding-top: 40rpx;
+    width: 96%;
+}
+
+.nearby .head {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.nearby .head .line {
+    border-bottom: 2rpx solid #f4f4f4;
+    width: 30%;
+}
+
+.nearby .head .title {
+    font-size: 28rpx;
+}
+
+.nearby .head .title text {
+    margin: 0rpx 15rpx;
+}
+
+.bg {
+    left: 0rpx;
+    margin-bottom: 15rpx;
+    position: fixed;
+    top: 0rpx;
+    width: 100%;
+}
+
+.bg .back-top {
+    height: 360rpx;
+    width: 100%;
+}
+
+.banner {
+    border-radius: 15rpx;
+    margin: 0rpx auto;
+    overflow: hidden;
+    width: 96%;
+}
+
+.notice {
+    border-radius: 10rpx;
+}
+
+.grid,.notice {
+    background-color: #fff;
+    margin: 15rpx auto;
+    overflow: hidden;
+    width: 96%;
+}
+
+.grid {
+    border-radius: 20rpx;
+    padding: 15rpx 0rpx;
+}
+
+.grid .item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 15rpx 0rpx;
+}
+
+.grid .item .text {
+    font-size: 24rpx;
+    margin-top: 10rpx;
+}

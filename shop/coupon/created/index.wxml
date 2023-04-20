@@ -1,0 +1,39 @@
+<view class="container">
+    <u-toast bind:__l="__l" class="vue-ref" data-ref="uToast" vueId="39b4e4b4-1"></u-toast>
+    <view class="form">
+        <u--form bind:__l="__l" labelPosition="left" labelWidth="51" vueId="39b4e4b4-2" vueSlots="{{['default']}}">
+            <u-form-item bind:__l="__l" borderBottom="{{true}}" label="名称" vueId="{{'39b4e4b4-3'+','+'39b4e4b4-2'}}" vueSlots="{{['default']}}">
+                <u--input bind:__l="__l" bind:input="__e" border="none" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','name','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入优惠券名称" value="{{form.name}}" vueId="{{'39b4e4b4-4'+','+'39b4e4b4-3'}}"></u--input>
+            </u-form-item>
+            <u-form-item bind:__l="__l" borderBottom="{{true}}" label="数量" vueId="{{'39b4e4b4-5'+','+'39b4e4b4-2'}}" vueSlots="{{['default']}}">
+                <u--input bind:__l="__l" bind:input="__e" border="none" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','num','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入优惠券发布数量" value="{{form.num}}" vueId="{{'39b4e4b4-6'+','+'39b4e4b4-5'}}"></u--input>
+            </u-form-item>
+            <u-form-item bind:__l="__l" borderBottom="{{true}}" label="面额" vueId="{{'39b4e4b4-7'+','+'39b4e4b4-2'}}" vueSlots="{{['default']}}">
+                <u--input bind:__l="__l" bind:input="__e" border="none" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','price','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入单张优惠券面额" value="{{form.price}}" vueId="{{'39b4e4b4-8'+','+'39b4e4b4-7'}}"></u--input>
+            </u-form-item>
+            <u-form-item bind:__l="__l" borderBottom="{{true}}" label="备注" vueId="{{'39b4e4b4-9'+','+'39b4e4b4-2'}}" vueSlots="{{['default']}}">
+                <u--textarea bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','remarks','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入优惠券备注" value="{{form.remarks}}" vueId="{{'39b4e4b4-10'+','+'39b4e4b4-9'}}"></u--textarea>
+            </u-form-item>
+            <u-form-item bind:__l="__l" borderBottom="{{true}}" label="状态" vueId="{{'39b4e4b4-11'+','+'39b4e4b4-2'}}" vueSlots="{{['default']}}">
+                <u-radio-group activeColor="{{setting.store.sys_theme}}" bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','status','$event',[] ],['form'] ] ] ] ]}}" value="{{form.status}}" vueId="{{'39b4e4b4-12'+','+'39b4e4b4-11'}}" vueSlots="{{['default']}}">
+                    <u-radio bind:__l="__l" label="启用" name="0" vueId="{{'39b4e4b4-13'+','+'39b4e4b4-12'}}"></u-radio>
+                    <u-radio bind:__l="__l" customStyle="{marginLeft:'12px'}" label="隐藏" name="1" vueId="{{'39b4e4b4-14'+','+'39b4e4b4-12'}}"></u-radio>
+                </u-radio-group>
+            </u-form-item>
+            <view class="item">
+                <view class="security">
+                    <view class="icon">
+                        <u-icon bind:__l="__l" color="{{setting.store.sys_theme}}" name="info-circle" vueId="{{'39b4e4b4-15'+','+'39b4e4b4-2'}}"></u-icon>
+                    </view>
+                    <view class="text" wx:if="{{manage.end_time}}">当前品牌套餐无限制</view>
+                    <view class="text" wx:else>{{'当前可发布优惠券数量 （'+manage.end_num+'） 张优惠券'}}</view>
+                </view>
+            </view>
+            <view class="submit">
+                <view class="btn">
+                    <u-button bind:__l="__l" bind:click="__e" color="{{setting.store.sys_theme}}" data-event-opts="{{[ [ '^click',[ ['onSubmit'] ] ] ]}}" text="立即发布" vueId="{{'39b4e4b4-16'+','+'39b4e4b4-2'}}"></u-button>
+                </view>
+            </view>
+        </u--form>
+    </view>
+</view>

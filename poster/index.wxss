@@ -1,0 +1,53 @@
+.words {
+    z-index: 999;
+}
+
+.words .title {
+    box-shadow: 0rpx 10rpx 10rpx #f4f4f4;
+    padding: 30rpx;
+    text-align: center;
+}
+
+.words .form {
+    padding: 60rpx;
+}
+
+.words .submit {
+    margin-top: 30rpx;
+    padding: 0rpx 60rpx 60rpx;
+}
+
+.poster {
+    margin: 50rpx auto;
+    width: 540rpx;
+    z-index: -1;
+}
+
+.tips {
+    margin-top: 30rpx;
+}
+
+.tips .text {
+    text-align: center;
+}
+
+.action {
+    bottom: 80rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    left: 10%;
+    position: fixed;
+    width: 80%;
+}
+
+.action .btn {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.action .btn .text {
+    font-size: 28rpx;
+    margin-top: 15rpx;
+}

@@ -1,0 +1,21 @@
+{
+    "navigationBarTitleText": "附近",
+    "enablePullDownRefresh": false,
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "u-toast": "/node-modules/uview-ui/components/u-toast/u-toast",
+        "u-navbar": "/node-modules/uview-ui/components/u-navbar/u-navbar",
+        "u-swiper": "/node-modules/uview-ui/components/u-swiper/u-swiper",
+        "u-notice-bar": "/node-modules/uview-ui/components/u-notice-bar/u-notice-bar",
+        "u-grid": "/node-modules/uview-ui/components/u-grid/u-grid",
+        "u-grid-item": "/node-modules/uview-ui/components/u-grid-item/u-grid-item",
+        "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
+        "u-tabs": "/node-modules/uview-ui/components/u-tabs/u-tabs",
+        "u--image": "/node-modules/uview-ui/components/u--image/u--image",
+        "u-rate": "/node-modules/uview-ui/components/u-rate/u-rate",
+        "u--text": "/node-modules/uview-ui/components/u--text/u--text",
+        "u-empty": "/node-modules/uview-ui/components/u-empty/u-empty",
+        "tabbar": "/components/tabbar/tabbar"
+    }
+}
