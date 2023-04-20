@@ -1,0 +1,10 @@
+<view class="container">
+    <view class="tabbar">
+        <u-tabbar activeColor="{{setting.activeColor}}" bind:__l="__l" bind:change="__e" border="{{false}}" data-event-opts="{{[ [ '^change',[ ['onChangeTabs'] ] ] ]}}" inactiveColor="{{setting.inactiveColor}}" placeholder="{{true}}" safeAreaInsetBottom="{{true}}" value="{{active}}" vueId="d01cb1fc-1" vueSlots="{{['default']}}">
+            <u-tabbar-item bind:__l="__l" icon="{{active=='10'?setting.index.selectedIconPath:setting.index.iconPath}}" name="10" text="{{setting.index.text}}" vueId="{{'d01cb1fc-2'+','+'d01cb1fc-1'}}" wx:if="{{setting.index&&setting.index.is_close==10}}"></u-tabbar-item>
+            <u-tabbar-item bind:__l="__l" icon="{{active=='20'?setting.nearby.selectedIconPath:setting.nearby.iconPath}}" name="20" text="{{setting.nearby.text}}" vueId="{{'d01cb1fc-3'+','+'d01cb1fc-1'}}" wx:if="{{is_check_nearby&&setting.nearby&&setting.nearby.is_close==10}}"></u-tabbar-item>
+            <u-tabbar-item bind:__l="__l" icon="{{active=='40'?setting.store.selectedIconPath:setting.store.iconPath}}" name="40" text="{{setting.store.text}}" vueId="{{'d01cb1fc-4'+','+'d01cb1fc-1'}}" wx:if="{{is_check_store&&setting.store&&setting.store.is_close==10}}"></u-tabbar-item>
+            <u-tabbar-item bind:__l="__l" icon="{{active=='30'?setting.me.selectedIconPath:setting.me.iconPath}}" name="30" text="{{setting.me.text}}" vueId="{{'d01cb1fc-5'+','+'d01cb1fc-1'}}" wx:if="{{setting.me&&setting.me.is_close==10}}"></u-tabbar-item>
+        </u-tabbar>
+    </view>
+</view>
